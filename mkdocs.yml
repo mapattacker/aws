@@ -1,0 +1,36 @@
+site_name: AWS Guide
+theme:
+    name: material
+    palette:
+      # Light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: blue
+        accent: blue
+        toggle:
+          icon: material/toggle-switch-off-outline
+          name: Switch to dark mode
+      # Dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: purple
+        accent: purple
+        toggle:
+          icon: material/toggle-switch
+          name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Interact with AWS Services:
+      AWS CLI: cli.md
+
+repo_name: mapattacker/aws
+repo_url: https://github.com/mapattacker/aws
+
+markdown_extensions:
+    - admonition
+    - pymdownx.highlight
+    - pymdownx.superfences
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
