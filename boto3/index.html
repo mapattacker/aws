@@ -372,7 +372,25 @@
 </code></pre></div>
 <h2 id="boto3-types">Boto3 Types</h2>
 <p>Boto3 has two types of interfaces, the client and resource. The <strong>client interface</strong> is low level and provides 1-1 mapping with the AWS services' APIs, with the return responses in JSON.</p>
-<p>The <strong>resource interface</strong> is a high level API, a wrapper for the client interface so that commands are more intuitive. However, it only exposes a subset of AWS API, so <strong>functionalities might be limited</strong>.</p>
+<p>The <strong>resource interface</strong> is a high level API, a wrapper for the client interface so that commands are more intuitive. </p>
+<p>Below is an <a href="https://docs.basis-ai.com/guides/data-loading-helpers-for-s3-and-gcs/s3-helpers">example</a> to download a file from S3.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">origin_blob_path</span><span class="p">,</span> <span class="n">dest_filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Download blob from S3 bucket.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        bucket_name (str)</span>
+<span class="sd">        origin_blob_path (str)</span>
+<span class="sd">        dest_filename (str): destination filename</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+    <span class="n">s3_bucket</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">)</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">)</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">origin_blob_path</span><span class="p">,</span> <span class="n">dest_filename</span><span class="p">)</span>
+</code></pre></div>
+<p>However, it only exposes a subset of AWS API, so <strong>functionalities might be limited</strong>, though we can assess the client interface in the resouce too as shown below.</p>
+<div class="highlight"><pre><span></span><code><span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+</code></pre></div>
                 
               
               
