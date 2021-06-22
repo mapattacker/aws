@@ -369,7 +369,7 @@
                 
                 
                 <h1 id="aws-cli">AWS CLI</h1>
-<p>The <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS Command Line Interface</a>, aws cli for short, allows us to easily access AWS services in the terminal. </p>
+<p>The <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS Command Line Interface</a>, <strong>AWS CLI</strong> for short, allows us to easily access AWS services in the terminal. </p>
 <h2 id="command-syntax">Command Syntax</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># command syntax</span>
 aws --&lt;optional-command&gt; &lt;main-command&gt; &lt;subcommand&gt; &lt;parameters&gt;
@@ -379,7 +379,12 @@ aws s3 mb s3://bucketname
 </code></pre></div>
 <p>We can find more info in the online CLI help docs, or just type <code>aws &lt;optional: command&gt; &lt;optional: subcommand&gt; help</code>, e.g. <code>aws s3 mb help</code> if needed.</p>
 <h2 id="configure">Configure</h2>
-<p>To make it easier to send commands without the need to enter the secrets and passwords, we can set a default profile or a specific profile name with those variables.</p>
+<p>To make it easier to send commands without the need to enter the credentials everytime, we can set a default profile or a specific profile name with those variables. The 4 credentials are the <strong>access and secret keys</strong>, <strong>region</strong>, and <strong>output format</strong> (default is <code>json</code>).</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/aws-cli1.png?raw=true" style="width:50%" />
+  <figcaption>AWS Configure</figcaption>
+</figure>
+
 <table>
 <thead>
 <tr>
@@ -397,15 +402,12 @@ aws s3 mb s3://bucketname
 <td>enter access, secret &amp; region names, based on a specific name</td>
 </tr>
 <tr>
-<td><code>nano ~/.aws/credentials</code></td>
-<td>run containers</td>
-</tr>
-<tr>
 <td><code>aws s3 ls --profile &lt;name&gt;</code></td>
 <td>enter commands based on profile</td>
 </tr>
 </tbody>
 </table>
+<p>These credentials are stored in <code>~/.aws/credentials</code>.</p>
                 
               
               
