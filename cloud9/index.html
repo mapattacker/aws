@@ -316,6 +316,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#credentials" class="md-nav__link">
+    Credentials
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -326,6 +333,21 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S3.md" class="md-nav__link">
+        S3
+      </a>
     </li>
   
 
@@ -361,6 +383,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#credentials" class="md-nav__link">
+    Credentials
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -383,7 +412,7 @@
 <h2 id="starting-cloud9">Starting Cloud9</h2>
 <p>Cloud9 runs on an EC2 instance, and charges based on the instance type and storage. If we choose the cheapest <code>t2.micro</code>, AWS <a href="https://aws.amazon.com/cloud9/pricing/">estimates</a> it to only be USD$2.05 per month. Free tier AWS (first year of account opening) has 750 free hours for EC2, so the costs should be either neligible or none at all. We should allow the cost saving settings to be on to prevent ballooning accidental costs.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud91.png?raw=true" style="width:80%" align="center"/>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud91.png?raw=true" style="width:80%" />
   <figcaption>Choosing EC2 instance type & cost savings setting when launching a Cloud9 instance</figcaption>
 </figure>
 
@@ -392,6 +421,10 @@
   <img src="https://github.com/mapattacker/aws/blob/master/images/cloud92.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
+
+<h2 id="credentials">Credentials</h2>
+<p>By default, Cloud9 has temporary credentials that will refresh every 5 mins. These credentials are the same as the IAM role that was used to create this Cloud9 instance, so the permissions to AWS resources are the same.</p>
+<p>To use a different credentials, we need to go to Cloud9 Settings &gt; AWS Settings &gt; Credentials &gt; turn off AWS managed temporary credentials. Then in the terminal, <code>AWS Configure</code> &amp; enter your other credentials.</p>
                 
               
               
