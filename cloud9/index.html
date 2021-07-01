@@ -323,6 +323,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-uploads" class="md-nav__link">
+    File Uploads
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -390,6 +397,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-uploads" class="md-nav__link">
+    File Uploads
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -408,7 +422,12 @@
                 
                 
                 <h1 id="cloud9">Cloud9</h1>
-<p><a href="https://aws.amazon.com/cloud9/">Cloud9</a> is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects. </p>
+<p><a href="https://aws.amazon.com/cloud9/">Cloud9</a> is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud95.png?raw=true" style="width:100%" />
+  <figcaption>Interface of Cloud9 IDE</figcaption>
+</figure>
+
 <h2 id="starting-cloud9">Starting Cloud9</h2>
 <p>Cloud9 runs on an EC2 instance, and charges based on the instance type and storage. If we choose the cheapest <code>t2.micro</code>, AWS <a href="https://aws.amazon.com/cloud9/pricing/">estimates</a> it to only be USD$2.05 per month. Free tier AWS (first year of account opening) has 750 free hours for EC2, so the costs should be either neligible or none at all. We should allow the cost saving settings to be on to prevent ballooning accidental costs.</p>
 <figure>
@@ -425,6 +444,17 @@
 <h2 id="credentials">Credentials</h2>
 <p>By default, Cloud9 has temporary credentials that will refresh every 5 mins. These credentials are the same as the IAM role that was used to create this Cloud9 instance, so the permissions to AWS resources are the same.</p>
 <p>To use a different credentials, we need to go to Cloud9 Settings &gt; AWS Settings &gt; Credentials &gt; turn off AWS managed temporary credentials. Then in the terminal, <code>AWS Configure</code> &amp; enter your other credentials.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud93.png?raw=true" style="width:100%" />
+  <figcaption>Switching off Temp Credentials</figcaption>
+</figure>
+
+<h2 id="file-uploads">File Uploads</h2>
+<p>We can upload files &amp; access the settings from the Welcome page.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud94.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
                 
               
               

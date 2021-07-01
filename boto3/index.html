@@ -426,7 +426,7 @@
 <div class="highlight"><pre><span></span><code>pip install boto3
 </code></pre></div>
 <h2 id="boto3-types">Boto3 Types</h2>
-<p>Boto3 has two types of interfaces, the client and resource. The <strong>client interface</strong> is low level and provides 1-1 mapping with the AWS services' APIs, with the return responses in JSON.</p>
+<p>Boto3 has two types of interfaces, the client and resource. The <strong>client interface</strong> is low level and provides 1-1 mapping with the AWS services' APIs, with the return responses in JSON. All service operations are supported by clients.</p>
 <p>The <strong>resource interface</strong> is a high level API, a wrapper for the client interface so that commands are more intuitive. </p>
 <p>Below is an <a href="https://docs.basis-ai.com/guides/data-loading-helpers-for-s3-and-gcs/s3-helpers">example</a> to download a file from S3.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
