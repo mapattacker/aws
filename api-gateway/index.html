@@ -14,7 +14,7 @@
     
     
       
-        <title>Cloud9 - AWS Guide</title>
+        <title>API Gateway - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloud9" class="md-skip">
+        <a href="#api-gateway" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloud9
+              API Gateway
             
           </span>
         </div>
@@ -230,14 +230,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Interact with AWS Services
@@ -277,63 +275,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cloud9
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cloud9/" class="md-nav__link">
         Cloud9
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#starting-cloud9" class="md-nav__link">
-    Starting Cloud9
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    Credentials
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-uploads" class="md-nav__link">
-    File Uploads
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -365,12 +311,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         APIs
@@ -386,11 +334,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../api-gateway/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API Gateway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         API Gateway
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-authorization" class="md-nav__link">
+    API Authorization
+  </a>
+  
+    <nav class="md-nav" aria-label="API Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    CORS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    API-Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-endpoint-resource-policy" class="md-nav__link">
+    API Endpoint Resource Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpc-endpoint-policy" class="md-nav__link">
+    VPC Endpoint Policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -426,23 +453,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#starting-cloud9" class="md-nav__link">
-    Starting Cloud9
+  <a href="#deployment" class="md-nav__link">
+    Deployment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    Credentials
+  <a href="#api-authorization" class="md-nav__link">
+    API Authorization
+  </a>
+  
+    <nav class="md-nav" aria-label="API Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    CORS
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#file-uploads" class="md-nav__link">
-    File Uploads
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    API-Key
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-endpoint-resource-policy" class="md-nav__link">
+    API Endpoint Resource Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpc-endpoint-policy" class="md-nav__link">
+    VPC Endpoint Policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,45 +512,70 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/cloud9.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/api-gateway.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cloud9">Cloud9</h1>
-<p><a href="https://aws.amazon.com/cloud9/">Cloud9</a> is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.</p>
+                <h1 id="api-gateway">API Gateway</h1>
+<p>Usually we use API Gateway as a proxy for our backend.</p>
+<p>If we use REST API Gateway we can:</p>
+<ul>
+<li>Validate requests &amp; responses with models<ul>
+<li>written in JSON</li>
+<li>done at Method Request/Response</li>
+</ul>
+</li>
+<li>Transform requests &amp; responses with mappings<ul>
+<li>written in VTL language</li>
+<li>done at Integration Request/Response</li>
+</ul>
+</li>
+</ul>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud95.png?raw=true" style="width:100%" />
-  <figcaption>Interface of Cloud9 IDE</figcaption>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway1.png?raw=true" style="width:100%" />
+  <figcaption>Method & Integration for Requests & Responses</figcaption>
 </figure>
 
-<h2 id="starting-cloud9">Starting Cloud9</h2>
-<p>Cloud9 runs on an EC2 instance, and charges based on the instance type and storage. If we choose the cheapest <code>t2.micro</code>, AWS <a href="https://aws.amazon.com/cloud9/pricing/">estimates</a> it to only be USD$2.05 per month. Free tier AWS (first year of account opening) has 750 free hours for EC2, so the costs should be either neligible or none at all. We should allow the cost saving settings to be on to prevent ballooning accidental costs.</p>
+<h2 id="deployment">Deployment</h2>
+<p>Once a REST API is created in API Gateway, it doesn’t automatically become available to invoke. We need to publish the API first. </p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud91.png?raw=true" style="width:80%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway2.png?raw=true" style="width:100%" />
+  <figcaption>Deploying the API</figcaption>
+</figure>
+
+<p>In API Gateway, we publish the API to a stage.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway3.png?raw=true" style="width:100%" />
+  <figcaption>Indicate deployment stage</figcaption>
+</figure>
+
+<p>The API endpoint will be appended with the stage path, e.g., for dev stage, it would be <code>https://a69m13u8y3.execute-api.ap-southeast-1.amazonaws.com/dev</code>. For each stage, we can add configurations to it, e.g., throttling, logs, or canary deployment.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway4.png?raw=true" style="width:100%" />
   <figcaption>Choosing EC2 instance type & cost savings setting when launching a Cloud9 instance</figcaption>
 </figure>
 
-<p>To close Cloud9 IDE, we need to go to the EC2 instance to shutdown. To start the instance, we can just go to Cloud9 service in management console and open the IDE.</p>
+<h2 id="api-authorization">API Authorization</h2>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud92.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway5.png?raw=true" style="width:100%" />
+  <figcaption>Some ways we can authorize and authenticate users of our API</figcaption>
 </figure>
 
-<h2 id="credentials">Credentials</h2>
-<p>By default, Cloud9 has temporary credentials that will refresh every 5 mins. These credentials are the same as the IAM role that was used to create this Cloud9 instance, so the permissions to AWS resources are the same.</p>
-<p>To use a different credentials, we need to go to Cloud9 Settings &gt; AWS Settings &gt; Credentials &gt; turn off AWS managed temporary credentials. Then in the terminal, <code>AWS Configure</code> &amp; enter your other credentials.</p>
+<h3 id="cors">CORS</h3>
+<p>By default, if the API is executed from a different domain, this will be blocked by AWS. However, we can enable it in API-Gateway by enabling Cross Origin Resource Sharing (CORS).</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud93.png?raw=true" style="width:100%" />
-  <figcaption>Switching off Temp Credentials</figcaption>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway6.png?raw=true" style="width:100%" />
+  <figcaption>Allowing CORS</figcaption>
 </figure>
 
-<h2 id="file-uploads">File Uploads</h2>
-<p>We can upload files &amp; access the settings from the Welcome page.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud94.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
-</figure>
+<h3 id="api-key">API-Key</h3>
+<p>An API-key is a string of password that is generated to an API-user. It is passed as a header in the request with the key <code>x-api-key</code>. With this set, only the correct api-key have access to the API. However, as it is a password string sent within a request, it is not very secure.</p>
+<p>The upside of this method is that, we can tag a usage plan for a particular API-key, including the quota (# request/mth) and throttling (# request/sec).</p>
+<h3 id="api-endpoint-resource-policy">API Endpoint Resource Policy</h3>
+<p>We can use the API gateway resource policy to limit access to specific IP addresses.</p>
+<h3 id="vpc-endpoint-policy">VPC Endpoint Policy</h3>
+<p>For private APIs, we can improve the security by configuring the policy at the VPC endpoints. </p>
                 
               
               
@@ -515,7 +594,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../boto3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../s3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -524,25 +603,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Boto3
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../s3/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
               S3
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
