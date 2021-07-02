@@ -367,6 +367,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#models-mappings" class="md-nav__link">
+    Models &amp; Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deployment" class="md-nav__link">
     Deployment
   </a>
@@ -453,6 +460,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#models-mappings" class="md-nav__link">
+    Models &amp; Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deployment" class="md-nav__link">
     Deployment
   </a>
@@ -518,7 +532,14 @@
                 
                 
                 <h1 id="api-gateway">API Gateway</h1>
-<p>Usually we use API Gateway as a proxy for our backend.</p>
+<p><a href="https://aws.amazon.com/api-gateway/">API Gateway</a> is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway.png?raw=true" style="width:100%" />
+  <figcaption>A gateway to AWS services</figcaption>
+</figure>
+
+<h2 id="models-mappings">Models &amp; Mappings</h2>
+<p>We can use API Gateway as a proxy for our backend.</p>
 <p>If we use REST API Gateway we can:</p>
 <ul>
 <li>Validate requests &amp; responses with models<ul>
@@ -546,7 +567,7 @@
 
 <p>In API Gateway, we publish the API to a stage.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway3.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/api-gateway3.png?raw=true" style="width:80%" />
   <figcaption>Indicate deployment stage</figcaption>
 </figure>
 
@@ -571,7 +592,7 @@
 
 <h3 id="api-key">API-Key</h3>
 <p>An API-key is a string of password that is generated to an API-user. It is passed as a header in the request with the key <code>x-api-key</code>. With this set, only the correct api-key have access to the API. However, as it is a password string sent within a request, it is not very secure.</p>
-<p>The upside of this method is that, we can tag a usage plan for a particular API-key, including the quota (# request/mth) and throttling (# request/sec).</p>
+<p>The upside of this method is that, we can tag a usage plan for a particular API-key, including the <strong>quota</strong> (# request/mth) and <strong>throttling</strong> (# request/sec).</p>
 <h3 id="api-endpoint-resource-policy">API Endpoint Resource Policy</h3>
 <p>We can use the API gateway resource policy to limit access to specific IP addresses.</p>
 <h3 id="vpc-endpoint-policy">VPC Endpoint Policy</h3>
