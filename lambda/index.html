@@ -371,9 +371,59 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lambda
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Lambda
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execution-environment" class="md-nav__link">
+    Execution Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configs" class="md-nav__link">
+    Basic Configs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -403,6 +453,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execution-environment" class="md-nav__link">
+    Execution Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configs" class="md-nav__link">
+    Basic Configs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -419,6 +505,45 @@
                 
                 
                 <h1 id="lambda">Lambda</h1>
+<p>AWS <a href="https://aws.amazon.com/lambda/">Lambda</a> is a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.</p>
+<p>We can upload our code as a ZIP file or container image, and Lambda automatically and precisely allocates compute execution power and runs your code based on the incoming request or event, for any scale of traffic. We can also set up your code to automatically trigger from over 200 AWS services and SaaS applications or call it directly from any web or mobile app.</p>
+<h2 id="execution-environment">Execution Environment</h2>
+<p>It takes time to set up an execution context and do the necessary "bootstrapping", which adds some latency each time the Lambda function is invoked. You typically see this latency when a Lambda function is invoked for the first time or after it has been updated because AWS Lambda tries to reuse the execution context for subsequent invocations of the Lambda function. This is known as <strong>cold start</strong>.</p>
+<p>After a Lambda function is executed, AWS Lambda maintains the execution context for some time in anticipation of another Lambda function invocation. In effect, the service freezes the execution context after a Lambda function completes, and thaws the context for reuse, if AWS Lambda chooses to reuse the context when the Lambda function is invoked again. This is known as <strong>execution context reuse</strong>. The execution context is kept <strong>warm</strong> 15mins after the end of an execution, before cold starting again. </p>
+<p>To keep your lambda warm, we can have a scheduled job in Cloudwatch to involve the API every 15mins. This setting is also available in tools like zappa &amp; serverless.
+To keep multiples of the same lambdas always warm, we can set a lambda <strong>provisioned concurrency setting</strong>, but there will be an add-on charge.</p>
+<p><strong>Objects declared outside of the function's handler method remain initialized, providing additional optimization when the function is invoked again</strong>. For example, if your Lambda function establishes a database connection, instead of reestablishing the connection, the original connection is used in subsequent invocations. However, it is recommended to add logic in the code to check if a connection exists before creating one.</p>
+<p>Each execution context provides 512 MB of additional disk space in the /tmp directory. The directory content remains when the execution context is frozen, providing transient cache that can be used for multiple invocations. You can add extra code to check if the cache has the data that you stored. For information on deployment limits, see AWS Lambda limits.</p>
+<h2 id="basic-configs">Basic Configs</h2>
+<p>Some important settings for lambda include the memory, which also determines the number of CPU, timeout, and execution roles.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda1.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Others include concurrency, which limits the number of lambdas that will be spun up at a given time, and environment variables, which your function can access.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="permissions">Permissions</h2>
+<p>There are two types of permissions for lambda. The first is <strong>execution permissions</strong>, which defines what the lambda can do. This is set up in an IAM role.</p>
+<p>The most basic policy is <code>AWSLambdaBasicExecutionRole</code>, which is allows permission to upload logs to CloudWatch. Some other lambda configured policies are included <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html">here</a>.</p>
+<p>The second type of permission is <strong>resource permissions</strong>, which defines what can invoke or manage your lambda functions. This is set by triggers.</p>
+<h2 id="triggers">Triggers</h2>
+<p>Lambda functions can be invoked by the push or pull models.</p>
+<p>For the push model, for example, someone can send a request to the API Gateway, which triggers the lambda to run. Alternatively, someone can upload a file to S3, and it triggers a lambda to process that file.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda3.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>For the pull model, for example, for streaming or queue services like SQS, Kinesis, DynamoDB Streams. This is configured through event source mappings.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda4.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
                 
               
               
