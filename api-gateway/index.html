@@ -403,8 +403,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#api-endpoint-resource-policy" class="md-nav__link">
-    API Endpoint Resource Policy
+  <a href="#ip-whitelisting" class="md-nav__link">
+    IP Whitelisting
   </a>
   
 </li>
@@ -412,6 +412,13 @@
           <li class="md-nav__item">
   <a href="#vpc-endpoint-policy" class="md-nav__link">
     VPC Endpoint Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cognito" class="md-nav__link">
+    Cognito
   </a>
   
 </li>
@@ -496,8 +503,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#api-endpoint-resource-policy" class="md-nav__link">
-    API Endpoint Resource Policy
+  <a href="#ip-whitelisting" class="md-nav__link">
+    IP Whitelisting
   </a>
   
 </li>
@@ -505,6 +512,13 @@
           <li class="md-nav__item">
   <a href="#vpc-endpoint-policy" class="md-nav__link">
     VPC Endpoint Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cognito" class="md-nav__link">
+    Cognito
   </a>
   
 </li>
@@ -591,9 +605,9 @@
 </figure>
 
 <h3 id="api-key">API-Key</h3>
-<p>An <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html">API-key</a> is a string of password that is generated to an API-user. It is passed as a header in the request with the key <code>x-api-key</code>. With this set, only the correct api-key have access to the API. However, as it is a password string sent within a request, it is not very secure.</p>
+<p>An <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html">API-key</a> is a password that is generated to an API-user. With this, only the correct api-key have access to the API. However, as it is a password string sent within a request, it is not very secure.</p>
 <p>The upside of this method is that, we can tag a usage plan for a particular API-key, including the <strong>quota</strong> (# request/mth) and <strong>throttling</strong> (# request/sec).</p>
-<p>First we will need to create an API key.</p>
+<p>First we will need to create an API key. Copy the API key generated. The key is retrieval, unlike your AWS credentials which can only be generated once.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/api-key1.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
@@ -614,13 +628,46 @@
 <p>Last, we will need to go to the Resouces &gt; click on the API method &gt; Method Request &gt; Settings &gt; change the <strong>API Key Required</strong> to true. Once that is done, we redeploy the API.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/api-key3.png?raw=true" style="width:50%" />
-  <figcaption>Indicate deployment stage</figcaption>
+  <figcaption>Change API Key Required to True</figcaption>
 </figure>
 
-<h3 id="api-endpoint-resource-policy">API Endpoint Resource Policy</h3>
-<p>We can use the API gateway resource policy to limit access to specific IP addresses.</p>
+<p>Lastly, we can try accessing the API by adding it as a header in the request with the key name <code>x-api-key</code>.</p>
+<h3 id="ip-whitelisting">IP Whitelisting</h3>
+<p>We can use the API gateway resource policy to limit access to specific IP addresses. An example below.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Principal&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="s2">&quot;execute-api:Invoke&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;execute-api:/*&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Condition&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;IpAddress&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;aws:SourceIp&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;1.2.3.4/32&quot;</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="vpc-endpoint-policy">VPC Endpoint Policy</h3>
 <p>For private APIs, we can improve the security by configuring the policy at the VPC endpoints. </p>
+<h3 id="cognito">Cognito</h3>
+<p>AWS <a href="https://aws.amazon.com/cognito/">Cognito</a> consists of user pool &amp; identity pool, which are two separate services. <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">User pool</a> is a user directory in Cognito, and it also provides a UI for users to sign into your app.</p>
+<p>If we only need to authorize an API gateway, we can just use the user-pool. This involves signing in to cognito via their UI and obtaining a JSON Web Token (JWT).</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/cognito-up.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>However, if we require access to other AWS services besides just API gateway, we will need to use an identity pool.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/cognito-idp.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
                 
               
               
