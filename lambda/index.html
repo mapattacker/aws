@@ -505,8 +505,11 @@
                 
                 
                 <h1 id="lambda">Lambda</h1>
-<p>AWS <a href="https://aws.amazon.com/lambda/">Lambda</a> is a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.</p>
+<p>AWS <a href="https://aws.amazon.com/lambda/">Lambda</a> is </p>
+<blockquote>
+<p>a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.</p>
 <p>We can upload our code as a ZIP file or container image, and Lambda automatically and precisely allocates compute execution power and runs your code based on the incoming request or event, for any scale of traffic. We can also set up your code to automatically trigger from over 200 AWS services and SaaS applications or call it directly from any web or mobile app.</p>
+</blockquote>
 <h2 id="execution-environment">Execution Environment</h2>
 <p>It takes time to set up an execution context and do the necessary "bootstrapping", which adds some latency each time the Lambda function is invoked. You typically see this latency when a Lambda function is invoked for the first time or after it has been updated because AWS Lambda tries to reuse the execution context for subsequent invocations of the Lambda function. This is known as <strong>cold start</strong>.</p>
 <p>After a Lambda function is executed, AWS Lambda maintains the execution context for some time in anticipation of another Lambda function invocation. In effect, the service freezes the execution context after a Lambda function completes, and thaws the context for reuse, if AWS Lambda chooses to reuse the context when the Lambda function is invoked again. This is known as <strong>execution context reuse</strong>. The execution context is kept <strong>warm</strong> 15mins after the end of an execution, before cold starting again. </p>
