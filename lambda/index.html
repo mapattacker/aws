@@ -401,6 +401,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-lambda" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Lambda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    Handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-libraries-handler" class="md-nav__link">
+    Zip libraries &amp; handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-lambda_1" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-configs" class="md-nav__link">
     Basic Configs
   </a>
@@ -417,6 +451,13 @@
         <li class="md-nav__item">
   <a href="#triggers" class="md-nav__link">
     Triggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-alias" class="md-nav__link">
+    Version &amp; Alias
   </a>
   
 </li>
@@ -467,6 +508,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-lambda" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Lambda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    Handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-libraries-handler" class="md-nav__link">
+    Zip libraries &amp; handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-lambda_1" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-configs" class="md-nav__link">
     Basic Configs
   </a>
@@ -483,6 +558,13 @@
         <li class="md-nav__item">
   <a href="#triggers" class="md-nav__link">
     Triggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-alias" class="md-nav__link">
+    Version &amp; Alias
   </a>
   
 </li>
@@ -513,10 +595,41 @@
 <h2 id="execution-environment">Execution Environment</h2>
 <p>It takes time to set up an execution context and do the necessary "bootstrapping", which adds some latency each time the Lambda function is invoked. You typically see this latency when a Lambda function is invoked for the first time or after it has been updated because AWS Lambda tries to reuse the execution context for subsequent invocations of the Lambda function. This is known as <strong>cold start</strong>.</p>
 <p>After a Lambda function is executed, AWS Lambda maintains the execution context for some time in anticipation of another Lambda function invocation. In effect, the service freezes the execution context after a Lambda function completes, and thaws the context for reuse, if AWS Lambda chooses to reuse the context when the Lambda function is invoked again. This is known as <strong>execution context reuse</strong>. The execution context is kept <strong>warm</strong> 15mins after the end of an execution, before cold starting again. </p>
-<p>To keep your lambda warm, we can have a scheduled job in Cloudwatch to involve the API every 15mins. This setting is also available in tools like zappa &amp; serverless.
-To keep multiples of the same lambdas always warm, we can set a lambda <strong>provisioned concurrency setting</strong>, but there will be an add-on charge.</p>
+<p>To keep your lambda warm, we can have a scheduled job in Cloudwatch to involve the API every 15mins. This setting is also available in tools like zappa &amp; serverless. To keep multiples of the same lambdas always warm, we can set a lambda <strong>provisioned concurrency setting</strong>, but there will be an add-on charge.</p>
 <p><strong>Objects declared outside of the function's handler method remain initialized, providing additional optimization when the function is invoked again</strong>. For example, if your Lambda function establishes a database connection, instead of reestablishing the connection, the original connection is used in subsequent invocations. However, it is recommended to add logic in the code to check if a connection exists before creating one.</p>
 <p>Each execution context provides 512 MB of additional disk space in the /tmp directory. The directory content remains when the execution context is frozen, providing transient cache that can be used for multiple invocations. You can add extra code to check if the cache has the data that you stored. For information on deployment limits, see AWS Lambda limits.</p>
+<h2 id="create-lambda">Create Lambda</h2>
+<h3 id="handler">Handler</h3>
+<p>In a python handler, it includes the <strong>handler name</strong> (function name), <strong>event</strong>, which is the information passing from the request, and <strong>context</strong>, which contains AWS specific invocations or execution of your lambda, e.g. memory, cognito identity details etc.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">handler_name</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="c1"># do something</span>
+    <span class="k">return</span> <span class="n">something</span>
+</code></pre></div>
+<h3 id="zip-libraries-handler">Zip libraries &amp; handler</h3>
+<p>We will need to zip both python packages and the handler...</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Download dependencies into folder</span>
+sudo pip install --target ./add-dragon-package boto3
+<span class="c1"># Zip up your code (with dependencies)</span>
+zip -r9 <span class="si">${</span><span class="nv">OLDPWD</span><span class="si">}</span>/ pythonAddDragonFunction.zip .   
+<span class="c1"># Add python script to zip</span>
+zip -g pythonAddDragonFunction.zip addDragon.py
+</code></pre></div>
+<h3 id="create-lambda_1">Create Lambda</h3>
+<p>Then upload the zip file using either...</p>
+<p>Using AWS CLI, or</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create Lambda Function</span>
+aws lambda create-function --function-name add-dragon --runtime python3.6  --role &lt;IAM ROLE ARN&gt; --handler addDragon.addDragonToFile --publish --zip-file fileb://pythonAddDragonFunction.zip
+<span class="c1"># Invoke Lambda Function</span>
+aws lambda invoke --function-name add-dragon output.txt --payload file://newDragonPayload.json 
+<span class="c1"># Update Lambda Code</span>
+aws lambda update-function-code --function-name add-dragon --zip-file fileb://pythonAddDragonFunction.zip --publish
+</code></pre></div>
+<p>Using management console.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
 <h2 id="basic-configs">Basic Configs</h2>
 <p>Some important settings for lambda include the memory, which also determines the number of CPU, timeout, and execution roles.</p>
 <figure>
@@ -542,11 +655,14 @@ To keep multiples of the same lambdas always warm, we can set a lambda <strong>p
   <figcaption></figcaption>
 </figure>
 
-<p>For the pull model, for example, for streaming or queue services like SQS, Kinesis, DynamoDB Streams. This is configured through event source mappings.</p>
+<p>For the pull model, for example, lambda will look for data in streaming or queue services like SQS, Kinesis, DynamoDB Streams, and trigger to pull the data into the function. This is configured through event source mappings.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/lambda4.png?raw=true" style="width:80%" />
   <figcaption></figcaption>
 </figure>
+
+<h2 id="version-alias">Version &amp; Alias</h2>
+<p>You can publish a new <strong>version</strong> of your AWS Lambda function when you create new or update existing functions. Each version of a lambda function gets it’s own unique Amazon Resource Name (ARN). You can then use these ARNs to use different versions of the Lambda function for different purposes. You also have the ability to create <strong>aliases</strong> for AWS Lambda functions. Aliases are essentially pointers to one specific Lambda version.</p>
                 
               
               

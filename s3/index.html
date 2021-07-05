@@ -470,8 +470,22 @@
 
 
 <span class="k">def</span> <span class="nf">upload_file</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">local_filepath</span><span class="p">,</span> <span class="n">bucketname</span><span class="p">,</span> <span class="n">s3_filepath</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;upload a file to S3&quot;&quot;&quot;</span>
     <span class="n">s3</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="n">local_filepath</span><span class="p">,</span> <span class="n">bucketname</span><span class="p">,</span> <span class="n">s3_filepath</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;upload </span><span class="si">{</span><span class="n">local_path</span><span class="si">}</span><span class="s2"> complete&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">query_json</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">bucketname</span><span class="p">,</span> <span class="n">SQL_expression</span><span class="p">,</span> <span class="n">s3_filepath</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;select query from json; query is done in S3 so its much cheaper&quot;&quot;&quot;</span>
+    <span class="n">SQL_expression</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;select * from S3Object[*][*] as s where s.family_str = &#39;blue&#39; &quot;&quot;&quot;</span>  
+    <span class="n">result</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">select_object_content</span><span class="p">(</span>
+                <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket_name</span><span class="p">,</span>
+                <span class="n">Key</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+                <span class="n">ExpressionType</span><span class="o">=</span><span class="s1">&#39;SQL&#39;</span><span class="p">,</span>
+                <span class="n">Expression</span><span class="o">=</span><span class="n">SQL_expression</span><span class="p">,</span>
+                <span class="n">InputSerialization</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;JSON&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Document&#39;</span><span class="p">}},</span>
+                <span class="n">OutputSerialization</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;JSON&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
