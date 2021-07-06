@@ -530,7 +530,7 @@
 </blockquote>
 <p>Every AWS service that you create have an ARN.</p>
 <h2 id="json-policy-syntax">JSON Policy Syntax</h2>
-<p>There are two main keys in a policy, one is the <code>Action</code>, and another is <code>Resource</code></p>
+<p>There are two main keys in a policy, one is the <code>Action</code>, and another is <code>Resource</code>. Action indicates the various actions an AWS service can perform while the Resource is the specific service (by ARN) that you launched that have those actions.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
     <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -572,6 +572,24 @@
                 <span class="s2">&quot;s3:GetObjectVersionForReplication&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;s3:GetBucketLocation&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;s3:GetObjectVersion&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:s3:::dragon-data-sy/*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::dragon-data-sy&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This can be further shorterned by using the asterik symbol.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;VisualEditor0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;s3:Get*&quot;</span>
             <span class="p">],</span>
             <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="s2">&quot;arn:aws:s3:::dragon-data-sy/*&quot;</span><span class="p">,</span>
