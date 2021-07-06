@@ -350,6 +350,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aws-cli" class="md-nav__link">
+    AWS CLI
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -443,6 +450,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aws-cli" class="md-nav__link">
+    AWS CLI
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -475,6 +489,12 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;upload </span><span class="si">{</span><span class="n">local_path</span><span class="si">}</span><span class="s2"> complete&quot;</span><span class="p">)</span>
 
 
+<span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">s3_filepath</span><span class="p">,</span> <span class="n">local_filepath</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Download file from S3&quot;&quot;&quot;</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">)</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">s3_filepath</span><span class="p">,</span> <span class="n">local_filepath</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;download </span><span class="si">{</span><span class="n">s3_filepath</span><span class="si">}</span><span class="s2"> complete&quot;</span><span class="p">)</span>
+
+
 <span class="k">def</span> <span class="nf">query_json</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">bucketname</span><span class="p">,</span> <span class="n">SQL_expression</span><span class="p">,</span> <span class="n">s3_filepath</span><span class="p">)</span>
     <span class="sd">&quot;&quot;&quot;select query from json; query is done in S3 so its much cheaper&quot;&quot;&quot;</span>
     <span class="n">SQL_expression</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;select * from S3Object[*][*] as s where s.family_str = &#39;blue&#39; &quot;&quot;&quot;</span>  
@@ -494,6 +514,38 @@
     <span class="n">s3_path</span> <span class="o">=</span> <span class="s2">&quot;dragon_stats_one.json&quot;</span>
     <span class="n">upload_file</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">local_path</span><span class="p">,</span> <span class="n">bucketname</span><span class="p">,</span> <span class="n">s3_path</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="aws-cli">AWS CLI</h2>
+<p>Note that all bucket URLs in aws cli must have the prefix with <code>s3://bucket-name/example</code>. More high level commands in the official <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html">documentation</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aws s3 ls <target></td>
+<td>List buckets or files in a bucket etc.</td>
+</tr>
+<tr>
+<td>aws s3 cp <source> <target></td>
+<td>Copy file from s3/local vice versa</td>
+</tr>
+<tr>
+<td>aws s3 mv <source> <target></td>
+<td>move file a bucket location or to local</td>
+</tr>
+<tr>
+<td>aws s3 rm s3://<filepath></td>
+<td>delete file in bucket</td>
+</tr>
+<tr>
+<td>aws s3 rm s3://<my-bucket/path> --recursive</td>
+<td>remove all files in directory</td>
+</tr>
+</tbody>
+</table>
                 
               
               
