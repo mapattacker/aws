@@ -419,6 +419,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-manager/" class="md-nav__link">
+        Systems Manager
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -496,7 +511,7 @@
 
 
 <span class="k">def</span> <span class="nf">query_json</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">bucketname</span><span class="p">,</span> <span class="n">SQL_expression</span><span class="p">,</span> <span class="n">s3_filepath</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;select query from json; query is done in S3 so its much cheaper&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;select query from json; filter query is done in S3 so its much cheaper&quot;&quot;&quot;</span>
     <span class="n">SQL_expression</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;select * from S3Object[*][*] as s where s.family_str = &#39;blue&#39; &quot;&quot;&quot;</span>  
     <span class="n">result</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">select_object_content</span><span class="p">(</span>
                 <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket_name</span><span class="p">,</span>

@@ -435,6 +435,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#attaching-lambda-to-api-gateway" class="md-nav__link">
+    Attaching Lambda to API Gateway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-configs" class="md-nav__link">
     Basic Configs
   </a>
@@ -472,6 +479,21 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-manager/" class="md-nav__link">
+        Systems Manager
+      </a>
     </li>
   
 
@@ -538,6 +560,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-lambda-to-api-gateway" class="md-nav__link">
+    Attaching Lambda to API Gateway
+  </a>
   
 </li>
       
@@ -626,7 +655,25 @@ aws lambda invoke --function-name add-dragon output.txt --payload file://newDrag
 <span class="c1"># Update Lambda Code</span>
 aws lambda update-function-code --function-name add-dragon --zip-file fileb://pythonAddDragonFunction.zip --publish
 </code></pre></div>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda0.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
 <p>Using management console.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="attaching-lambda-to-api-gateway">Attaching Lambda to API Gateway</h2>
+<p>When we have created the Lambda function, we can attached it to our API Gateway by clicking the Request Integration.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>And selecting the relevant integration options.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/lambda.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
@@ -642,6 +689,12 @@ aws lambda update-function-code --function-name add-dragon --zip-file fileb://py
 <p>Others include concurrency, which limits the number of lambdas that will be spun up at a given time, and environment variables, which your function can access.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/lambda2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Adding and saving test requests</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda2_.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
@@ -697,6 +750,20 @@ aws lambda update-function-code --function-name add-dragon --zip-file fileb://py
           </div>
         </a>
       
+      
+        <a href="../systems-manager/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Systems Manager
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
