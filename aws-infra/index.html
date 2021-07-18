@@ -14,7 +14,7 @@
     
     
       
-        <title>Cloud9 - AWS Guide</title>
+        <title>Infrastructure - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloud9" class="md-skip">
+        <a href="#infrastructure" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloud9
+              Infrastructure
             
           </span>
         </div>
@@ -230,11 +230,56 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../aws-infra/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Infrastructure
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    Regions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability-zones" class="md-nav__link">
+    Availability Zones
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -260,14 +305,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Interact with AWS Services
@@ -307,63 +350,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cloud9
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cloud9/" class="md-nav__link">
         Cloud9
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#starting-cloud9" class="md-nav__link">
-    Starting Cloud9
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    Credentials
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-uploads" class="md-nav__link">
-    File Uploads
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -498,22 +489,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#starting-cloud9" class="md-nav__link">
-    Starting Cloud9
+  <a href="#regions" class="md-nav__link">
+    Regions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    Credentials
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-uploads" class="md-nav__link">
-    File Uploads
+  <a href="#availability-zones" class="md-nav__link">
+    Availability Zones
   </a>
   
 </li>
@@ -530,45 +514,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/cloud9.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/aws-infra.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cloud9">Cloud9</h1>
-<p><a href="https://aws.amazon.com/cloud9/">Cloud9</a> is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.</p>
+                <h1 id="infrastructure">Infrastructure</h1>
+<p>There are data centers in Availability Zones (AZ) and AZs within Regions. Both AZs and Regions have <strong>redundancies</strong>.</p>
+<h2 id="regions">Regions</h2>
+<p>Region is a cluster of data centers, or Availability Zones. We should choose regions based on the following, with compliance being the priority.</p>
+<table>
+<thead>
+<tr>
+<th>Considerations</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compliance</td>
+<td>with data governance &amp; legal requirements</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>hosted proximity to consumer</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td>varies with regions due to, e.g. tax structure</td>
+</tr>
+<tr>
+<td>Available Services</td>
+<td>not all services within a region</td>
+</tr>
+</tbody>
+</table>
+<p>Regions are represented by codes e.g. Singapore is <code>ap-southeast-1</code>.</p>
+<p>In the management console, we can choose the region at the top right corner of the screen.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud95.png?raw=true" style="width:100%" />
-  <figcaption>Interface of Cloud9 IDE</figcaption>
-</figure>
-
-<h2 id="starting-cloud9">Starting Cloud9</h2>
-<p>Cloud9 runs on an EC2 instance, and charges based on the instance type and storage. If we choose the cheapest <code>t2.micro</code>, AWS <a href="https://aws.amazon.com/cloud9/pricing/">estimates</a> it to only be USD$2.05 per month. Free tier AWS (first year of account opening) has 750 free hours for EC2, so the costs should be either neligible or none at all. We should allow the cost saving settings to be on to prevent ballooning accidental costs.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud91.png?raw=true" style="width:80%" />
-  <figcaption>Choosing EC2 instance type & cost savings setting when launching a Cloud9 instance</figcaption>
-</figure>
-
-<p>To close Cloud9 IDE, we need to go to the EC2 instance to shutdown. To start the instance, we can just go to Cloud9 service in management console and open the IDE.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud92.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/infra-region.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
-<h2 id="credentials">Credentials</h2>
-<p>By default, Cloud9 has temporary credentials that will refresh every 5 mins. These credentials are the same as the IAM role that was used to create this Cloud9 instance, so the permissions to AWS resources are the same.</p>
-<p>To use a different credentials, we need to go to Cloud9 Settings &gt; AWS Settings &gt; Credentials &gt; turn off AWS managed temporary credentials. Then in the terminal, <code>AWS Configure</code> &amp; enter your other credentials.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud93.png?raw=true" style="width:100%" />
-  <figcaption>Switching off Temp Credentials</figcaption>
-</figure>
-
-<h2 id="file-uploads">File Uploads</h2>
-<p>We can upload files &amp; access the settings from the Welcome page.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/cloud94.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
-</figure>
+<h2 id="availability-zones">Availability Zones</h2>
                 
               
               
@@ -587,7 +575,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../boto3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -596,19 +584,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Boto3
+              Home
             </div>
           </div>
         </a>
       
       
-        <a href="../s3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../iam/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              S3
+              IAM
             </div>
           </div>
           <div class="md-footer__button md-icon">
