@@ -21,8 +21,18 @@ theme:
 
 nav:
   - Home: index.md
+  - Infrastructure: aws-infra.md
+  - IAM: iam.md
   - Interact with AWS Services:
       AWS CLI: cli.md
+      Boto3: boto3.md
+      Cloud9: cloud9.md
+  - S3: s3.md
+  - APIs:
+      API Gateway: api-gateway.md
+      Lambda: lambda.md
+  - Step Functions: step-functions.md
+  - Systems Manager: systems-manager.md
 
 repo_name: mapattacker/aws
 repo_url: https://github.com/mapattacker/aws
