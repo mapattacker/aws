@@ -1,6 +1,12 @@
 # AWS CLI
 
-The [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html), **AWS CLI** for short, allows us to easily access AWS services in the terminal. 
+The [AWS Command Line Interface](https://aws.amazon.com/cli/), **AWS CLI** for short, allows us to easily access AWS services in the terminal. 
+
+## Installation
+
+If you’re using Amazon EC2 instances or AWS Cloud9, the tools are already installed for you.
+
+To install in your local machine, refer to this [guide](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 ## Command Syntax
 
