@@ -363,6 +363,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#identity-provider" class="md-nav__link">
+    Identity Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#arn" class="md-nav__link">
     ARN
   </a>
@@ -560,6 +567,48 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Monitoring
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Monitoring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Monitoring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloudwatch/" class="md-nav__link">
+        Cloudwatch
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -647,6 +696,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#identity-provider" class="md-nav__link">
+    Identity Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#arn" class="md-nav__link">
     ARN
   </a>
@@ -685,12 +741,17 @@
                 <h1 id="iam">IAM</h1>
 <p>AWS Identity and Access Management (<a href="https://aws.amazon.com/iam/">IAM</a>) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.</p>
 <p>There are two important terms in security. The first is <strong>Authentication</strong>; being verifying if someone is who they say they are because they logged in with the proper credentials. We can create new user login accounts for this. The second term is <strong>Authorization</strong>, where the policies assign permissions to allow or deny you access to actions for certain AWS resources.</p>
+<hr>
+
 <h2 id="security-models">Security Models</h2>
 <h3 id="shared-responsibility-model">Shared Responsibility Model</h3>
 <p>Both AWS and yourself have responsibilities in security. AWS are responsibility for security of the cloud, which include the global infrastructure, and software to the virtualization layer. You are responsible for the security in the cloud.</p>
 <h3 id="principle-of-least-privilege">Principle of Least Privilege</h3>
 <p>An important security recommendation is the principle of least privilege, where we only assign policies to a resource or person based on what they require only.</p>
+<hr>
+
 <h2 id="user-access">User Access</h2>
+<p>Users have static credential keys; i.e. username, password, access keys, and secret keys.</p>
 <h3 id="root-user">Root User</h3>
 <p>When we first create a AWS account, it will be created as a root user, having full access over this account. It will be wise to create a user for future logins for security reasons, as well as setting an <strong>MFA</strong> for this root account.</p>
 <h3 id="user-groups">User Groups</h3>
@@ -700,14 +761,21 @@
   <figcaption>AWS Cloud Essentials Course</figcaption>
 </figure>
 
+<hr>
+
 <h2 id="roles">Roles</h2>
-<p>For AWS services requiring access to other services, a role based access needs to be created. An IAM role is an identity you can create that has specific permissions with credentials that are <strong>valid for short durations</strong>.</p>
+<p>For AWS services requiring programmatic access to other services, a role based access needs to be created. An IAM role is an identity you can create that has specific permissions with credentials that are <strong>valid for short durations</strong>. Roles do not have static login credentials.</p>
+<h3 id="identity-provider">Identity Provider</h3>
+<p>If you have an organization that spans many employees and multiple AWS accounts, you may want your employees to sign in with a single credential. This can be done using a third-party identity provider, which uses AWS roles to grant access to each of these so-called <strong>federated user</strong>.</p>
+<p>We can also use <strong>AWS SSO</strong>, an IdP that lets your users sign in to a user portal with a single set of credentials. It then provides them access to all their assigned accounts and applications in one central location.</p>
 <h3 id="arn">ARN</h3>
 <p><a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">AWS Resource Names</a> (ARN) are</p>
 <blockquote>
 <p>uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls.</p>
 </blockquote>
 <p>Every AWS service that you create have an ARN.</p>
+<hr>
+
 <h2 id="json-policy-syntax">JSON Policy Syntax</h2>
 <p>There are three main keys in a policy; <code>Action</code>, <code>Effect</code>, and <code>Resource</code>. Action indicates the various actions an AWS service can perform, Effect indicates to allow or deny the actions, while the Resource is the specific service (by ARN) that you launched that have those actions.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
