@@ -269,6 +269,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interacting-with-aws-api" class="md-nav__link">
+    Interacting with AWS API
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -284,10 +291,37 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Security
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Security" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../iam/" class="md-nav__link">
         IAM
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -488,6 +522,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interacting-with-aws-api" class="md-nav__link">
+    Interacting with AWS API
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -542,6 +583,10 @@
   <img src="https://github.com/mapattacker/aws/blob/master/images/infra-region.png?raw=true" style="width:60%" />
   <figcaption></figcaption>
 </figure>
+
+<p>Note that there are some services which are global by nature, while others are region specific. For example, switching to another region, you can still see the same IAM service with your data as it is a global service, while your EC2 instances will not appear as it is region specific.</p>
+<h2 id="interacting-with-aws-api">Interacting with AWS API</h2>
+<p>There are 3 ways which we can interact with AWS services, which include the AWS Management Console, AWS Command Line Interface (AWS CLI), and AWS Software Development Kits (AWS SDKs).</p>
                 
               
               
