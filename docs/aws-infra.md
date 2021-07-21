@@ -4,7 +4,9 @@ There are data centers in Availability Zones (AZ) and AZs within Regions. Both A
 
 ## Regions
 
-Region is a cluster of data centers, or Availability Zones. We should choose regions based on the following, with compliance being the priority.
+Region is a cluster of data centers, or Availability Zones. We should choose regions based on the following, with compliance being the priority. 
+
+AWS Regions are independent from one another. This means that your data is not replicated from one Region to another, without your explicit consent and authorization.
 
 | Considerations | Desc |
 |-|-|
@@ -18,9 +20,12 @@ Regions are represented by codes e.g. Singapore is `ap-southeast-1`.
 In the management console, we can choose the region at the top right corner of the screen.
 
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/infra-region.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/infra-region.png?raw=true" style="width:60%" />
   <figcaption></figcaption>
 </figure>
 
-## Availability Zones
+Note that there are some services which are global by nature, while others are region specific. For example, switching to another region, you can still see the same IAM service with your data as it is a global service, while your EC2 instances will not appear as it is region specific.
 
+## Interacting with AWS API
+
+There are 3 ways which we can interact with AWS services, which include the AWS Management Console, AWS Command Line Interface (AWS CLI), and AWS Software Development Kits (AWS SDKs).
