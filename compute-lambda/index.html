@@ -14,7 +14,7 @@
     
     
       
-        <title>Systems Manager - AWS Guide</title>
+        <title>Lambda - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#systems-manager" class="md-skip">
+        <a href="#lambda" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Systems Manager
+              Lambda
             
           </span>
         </div>
@@ -353,12 +353,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Compute
@@ -386,11 +388,118 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../compute-lambda/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lambda
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Lambda
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execution-environment" class="md-nav__link">
+    Execution Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-lambda" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Lambda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    Handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-libraries-handler" class="md-nav__link">
+    Zip libraries &amp; handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-lambda_1" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-lambda-to-api-gateway" class="md-nav__link">
+    Attaching Lambda to API Gateway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configs" class="md-nav__link">
+    Basic Configs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-alias" class="md-nav__link">
+    Version &amp; Alias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -479,49 +588,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Systems Manager
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../systems-manager/" class="md-nav__link">
         Systems Manager
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-store" class="md-nav__link">
-    Parameter Store
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -593,8 +664,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parameter-store" class="md-nav__link">
-    Parameter Store
+  <a href="#execution-environment" class="md-nav__link">
+    Execution Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-lambda" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Lambda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    Handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-libraries-handler" class="md-nav__link">
+    Zip libraries &amp; handler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-lambda_1" class="md-nav__link">
+    Create Lambda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-lambda-to-api-gateway" class="md-nav__link">
+    Attaching Lambda to API Gateway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configs" class="md-nav__link">
+    Basic Configs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-alias" class="md-nav__link">
+    Version &amp; Alias
   </a>
   
 </li>
@@ -611,29 +751,115 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/systems-manager.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-lambda.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="systems-manager">Systems Manager</h1>
-<h2 id="parameter-store">Parameter Store</h2>
-<p>The <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html">parameter store</a> provides</p>
+                <h1 id="lambda">Lambda</h1>
+<p>AWS <a href="https://aws.amazon.com/lambda/">Lambda</a> is </p>
 <blockquote>
-<p>secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data.</p>
+<p>a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.</p>
+<p>We can upload our code as a ZIP file or container image, and Lambda automatically and precisely allocates compute execution power and runs your code based on the incoming request or event, for any scale of traffic. We can also set up your code to automatically trigger from over 200 AWS services and SaaS applications or call it directly from any web or mobile app.</p>
 </blockquote>
+<h2 id="execution-environment">Execution Environment</h2>
+<p>It takes time to set up an execution context and do the necessary "bootstrapping", which adds some latency each time the Lambda function is invoked. You typically see this latency when a Lambda function is invoked for the first time or after it has been updated because AWS Lambda tries to reuse the execution context for subsequent invocations of the Lambda function. This is known as <strong>cold start</strong>.</p>
+<p>After a Lambda function is executed, AWS Lambda maintains the execution context for some time in anticipation of another Lambda function invocation. In effect, the service freezes the execution context after a Lambda function completes, and thaws the context for reuse, if AWS Lambda chooses to reuse the context when the Lambda function is invoked again. This is known as <strong>execution context reuse</strong>. The execution context is kept <strong>warm</strong> 15mins after the end of an execution, before cold starting again. </p>
+<p>To keep your lambda warm, we can have a scheduled job in Cloudwatch to involve the API every 15mins. This setting is also available in tools like zappa &amp; serverless. To keep multiples of the same lambdas always warm, we can set a lambda <strong>provisioned concurrency setting</strong>, but there will be an add-on charge.</p>
+<p><strong>Objects declared outside of the function's handler method remain initialized, providing additional optimization when the function is invoked again</strong>. For example, if your Lambda function establishes a database connection, instead of reestablishing the connection, the original connection is used in subsequent invocations. However, it is recommended to add logic in the code to check if a connection exists before creating one.</p>
+<p>Each execution context provides 512 MB of additional disk space in the /tmp directory. The directory content remains when the execution context is frozen, providing transient cache that can be used for multiple invocations. You can add extra code to check if the cache has the data that you stored. For information on deployment limits, see AWS Lambda limits.</p>
+<h2 id="create-lambda">Create Lambda</h2>
+<h3 id="handler">Handler</h3>
+<p>In a python handler, it includes the <strong>handler name</strong> (function name), <strong>event</strong>, which is the information passing from the request, and <strong>context</strong>, which contains AWS specific invocations or execution of your lambda, e.g. memory, cognito identity details etc.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">handler_name</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="c1"># do something</span>
+    <span class="k">return</span> <span class="n">something</span>
+</code></pre></div>
+<h3 id="zip-libraries-handler">Zip libraries &amp; handler</h3>
+<p>We will need to zip both python packages and the handler... <a href="https://docs.aws.amazon.com/lambda/latest/dg/python-package-create.html">More</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Download dependencies into folder</span>
+sudo pip install --target ./add-dragon-package boto3
+<span class="c1"># Zip up your code (with dependencies); zip file created yet</span>
+<span class="nb">cd</span> add-dragon-package
+zip -r9 <span class="si">${</span><span class="nv">OLDPWD</span><span class="si">}</span>/ pythonAddDragonFunction.zip .   
+<span class="c1"># Add python script to zip, zip file is generated at this stage</span>
+<span class="nb">cd</span> ..
+zip -g pythonAddDragonFunction.zip addDragon.py
+</code></pre></div>
+<h3 id="create-lambda_1">Create Lambda</h3>
+<p>Then upload the zip file using either...</p>
+<p>Using AWS CLI, or</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Create Lambda Function</span>
+aws lambda create-function --function-name add-dragon --runtime python3.6  --role &lt;IAM ROLE ARN&gt; --handler addDragon.addDragonToFile --publish --zip-file fileb://pythonAddDragonFunction.zip
+<span class="c1"># Invoke Lambda Function</span>
+aws lambda invoke --function-name add-dragon output.txt --payload file://newDragonPayload.json 
+<span class="c1"># Update Lambda Code</span>
+aws lambda update-function-code --function-name add-dragon --zip-file fileb://pythonAddDragonFunction.zip --publish
+</code></pre></div>
+There are additional options to add on to the lambda's configuration when we are creating the function, otherwise they will be defaulted.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/parameter-store1.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda0.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
-<p>Example of using parameter store to extract some variables.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
+<p>Using management console, to upload the zip file.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
 
-<span class="n">ssm</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;ssm&#39;</span><span class="p">,</span> <span class="s1">&#39;ap-southeast-1&#39;</span><span class="p">)</span>
-<span class="n">bucket_name</span> <span class="o">=</span> <span class="n">ssm</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span> <span class="n">Name</span><span class="o">=</span><span class="s1">&#39;dragon_data_bucket_name&#39;</span><span class="p">,</span><span class="n">WithDecryption</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
-<span class="n">file_name</span> <span class="o">=</span> <span class="n">ssm</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span> <span class="n">Name</span><span class="o">=</span><span class="s1">&#39;dragon_data_file_name&#39;</span><span class="p">,</span><span class="n">WithDecryption</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
-</code></pre></div>
+<p>Adding and saving test requests.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda2_.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="attaching-lambda-to-api-gateway">Attaching Lambda to API Gateway</h2>
+<p>When we have created the Lambda function, we can attached it to our API Gateway by clicking the Integration Request.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda-api-gateway1.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>And selecting the relevant integration options.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda-api-gateway2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="basic-configs">Basic Configs</h2>
+<p>Some important settings for lambda include the memory, which also determines the number of CPU, timeout, and execution roles.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda1.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Others include concurrency, which limits the number of lambdas that will be spun up at a given time, and environment variables, which your function can access.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="permissions">Permissions</h2>
+<p>There are two types of permissions for lambda. The first is <strong>execution permissions</strong>, which defines what the lambda can do. This is set up in an IAM role.</p>
+<p>The most basic policy is <code>AWSLambdaBasicExecutionRole</code>, which is allows permission to upload logs to CloudWatch. Some other lambda configured policies are included <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html">here</a>.</p>
+<p>The second type of permission is <strong>resource permissions</strong>, which defines what can invoke or manage your lambda functions. This is set by triggers.</p>
+<h2 id="triggers">Triggers</h2>
+<p>Lambda functions can be invoked by the push or pull models.</p>
+<p>For the push model, for example, someone can send a request to the API Gateway, which triggers the lambda to run. Alternatively, someone can upload a file to S3, and it triggers a lambda to process that file.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda3.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>For the pull model, for example, lambda will look for data in streaming or queue services like SQS, Kinesis, DynamoDB Streams, and trigger to pull the data into the function. This is configured through event source mappings.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/lambda4.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="version-alias">Version &amp; Alias</h2>
+<p>You can publish a new <strong>version</strong> of your AWS Lambda function when you create new or update existing functions. Each version of a lambda function gets it’s own unique Amazon Resource Name (ARN). You can then use these ARNs to use different versions of the Lambda function for different purposes. You also have the ability to create <strong>aliases</strong> for AWS Lambda functions. Aliases are essentially pointers to one specific Lambda version.</p>
                 
               
               
@@ -652,7 +878,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../step-functions/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../compute-intro/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -661,19 +887,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Step Functions
+              Intro
             </div>
           </div>
         </a>
       
       
-        <a href="../cloudwatch/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../s3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Cloudwatch
+              S3
             </div>
           </div>
           <div class="md-footer__button md-icon">

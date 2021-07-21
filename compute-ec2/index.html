@@ -14,7 +14,7 @@
     
     
       
-        <title>Systems Manager - AWS Guide</title>
+        <title>EC2 - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#systems-manager" class="md-skip">
+        <a href="#ec2" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Systems Manager
+              EC2
             
           </span>
         </div>
@@ -479,49 +479,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Systems Manager
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../systems-manager/" class="md-nav__link">
         Systems Manager
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-store" class="md-nav__link">
-    Parameter Store
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -586,21 +548,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-store" class="md-nav__link">
-    Parameter Store
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -611,29 +558,24 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/systems-manager.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-ec2.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="systems-manager">Systems Manager</h1>
-<h2 id="parameter-store">Parameter Store</h2>
-<p>The <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html">parameter store</a> provides</p>
-<blockquote>
-<p>secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data.</p>
-</blockquote>
+                <h1 id="ec2">EC2</h1>
+<p>To select the operating system (OS) of the VM, we first need to select the <strong>Amazon Machine Image</strong> (AMI). This can be images created by AWS, community created, offered in the Marketplace, or even one created by yourself.</p>
+<p>There are many different EC2 instance types that are <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">optimized</a> to either memory, compute, accelerated compute, storage, and general purpose. The naming conventions of instance type &amp; size are as such.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/parameter-store1.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-type.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
-<p>Example of using parameter store to extract some variables.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
-
-<span class="n">ssm</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;ssm&#39;</span><span class="p">,</span> <span class="s1">&#39;ap-southeast-1&#39;</span><span class="p">)</span>
-<span class="n">bucket_name</span> <span class="o">=</span> <span class="n">ssm</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span> <span class="n">Name</span><span class="o">=</span><span class="s1">&#39;dragon_data_bucket_name&#39;</span><span class="p">,</span><span class="n">WithDecryption</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
-<span class="n">file_name</span> <span class="o">=</span> <span class="n">ssm</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span> <span class="n">Name</span><span class="o">=</span><span class="s1">&#39;dragon_data_file_name&#39;</span><span class="p">,</span><span class="n">WithDecryption</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
-</code></pre></div>
+<p>We can also change the instance type for an instance which was already created.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-change-type.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
                 
               
               
@@ -649,39 +591,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../step-functions/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Step Functions
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../cloudwatch/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Cloudwatch
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
