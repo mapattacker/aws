@@ -14,7 +14,7 @@
     
     
       
-        <title>AWS CLI - AWS Guide</title>
+        <title>Containers - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-cli" class="md-skip">
+        <a href="#containers" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS CLI
+              Containers
             
           </span>
         </div>
@@ -287,14 +287,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Interact with AWS Services
@@ -310,63 +308,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          AWS CLI
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
         AWS CLI
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-syntax" class="md-nav__link">
-    Command Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure" class="md-nav__link">
-    Configure
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -407,12 +353,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Compute
@@ -464,11 +412,49 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../compute-containers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Containers
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orchestration" class="md-nav__link">
+    Orchestration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -633,22 +619,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-syntax" class="md-nav__link">
-    Command Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure" class="md-nav__link">
-    Configure
+  <a href="#orchestration" class="md-nav__link">
+    Orchestration
   </a>
   
 </li>
@@ -665,54 +637,36 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/cli.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-containers.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="aws-cli">AWS CLI</h1>
-<p>The <a href="https://aws.amazon.com/cli/">AWS Command Line Interface</a>, <strong>AWS CLI</strong> for short, allows us to easily access AWS services in the terminal. </p>
-<h2 id="installation">Installation</h2>
-<p>If you’re using Amazon EC2 instances or AWS Cloud9, the tools are already installed for you.</p>
-<p>To install in your local machine, refer to this <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">guide</a>.</p>
-<h2 id="command-syntax">Command Syntax</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># command syntax</span>
-aws --&lt;optional-command&gt; &lt;main-command&gt; &lt;subcommand&gt; &lt;parameters&gt;
-
-<span class="c1"># e.g.</span>
-aws s3 mb s3://bucketname
-</code></pre></div>
-<p>We can find more info in the online CLI help docs, or just type <code>aws &lt;optional: command&gt; &lt;optional: subcommand&gt; help</code>, e.g. <code>aws s3 mb help</code> if needed.</p>
-<h2 id="configure">Configure</h2>
-<p>To make it easier to send commands without the need to enter the credentials everytime, we can set a default profile or a specific profile name with those variables. The 4 credentials are the <strong>access and secret keys</strong>, <strong>region</strong>, and <strong>output format</strong> (default is <code>json</code>).</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/aws-cli1.png?raw=true" style="width:50%" />
-  <figcaption>AWS Configure</figcaption>
-</figure>
-
+                <h1 id="containers">Containers</h1>
+<h2 id="orchestration">Orchestration</h2>
+<p>AWS has two container orchestration services, Elastic Container Service (ECS) and Elastic Kubernetes Service (EKS). They are conceptually similar to each other.</p>
 <table>
 <thead>
 <tr>
-<th>Cmd</th>
-<th>Desc</th>
+<th>ECS</th>
+<th>EKS</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>aws configure</code></td>
-<td>enter access, secret &amp; region names, for default profile</td>
+<td>An EC2 instance with the ECS Agent installed and configured is called a container instance</td>
+<td>It is called a worker node</td>
 </tr>
 <tr>
-<td><code>aws configure --profile &lt;name&gt;</code></td>
-<td>enter access, secret &amp; region names, based on a specific name</td>
+<td>An ECS Container is called a task</td>
+<td>It is called a node</td>
 </tr>
 <tr>
-<td><code>aws s3 ls --profile &lt;name&gt;</code></td>
-<td>enter commands based on profile</td>
+<td>ECS runs on AWS native technology</td>
+<td>It is run on top of Kubernetes</td>
 </tr>
 </tbody>
 </table>
-<p>These credentials are stored in <code>~/.aws/credentials</code>.</p>
                 
               
               
@@ -731,7 +685,7 @@ aws s3 mb s3://bucketname
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../iam/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../compute-lambda/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -740,19 +694,19 @@ aws s3 mb s3://bucketname
               <span class="md-footer__direction">
                 Previous
               </span>
-              IAM
+              Lambda
             </div>
           </div>
         </a>
       
       
-        <a href="../boto3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../s3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Boto3
+              S3
             </div>
           </div>
           <div class="md-footer__button md-icon">
