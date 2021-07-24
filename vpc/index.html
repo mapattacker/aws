@@ -14,7 +14,7 @@
     
     
       
-        <title>Step Functions - AWS Guide</title>
+        <title>VPC - AWS Guide</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#vpc" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Step Functions
+              VPC
             
           </span>
         </div>
@@ -240,12 +245,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Security
@@ -273,11 +280,104 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../vpc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          VPC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         VPC
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ip-cidr-notation" class="md-nav__link">
+    IP &amp; CIDR Notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-vpc" class="md-nav__link">
+    Creating VPC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-subnet" class="md-nav__link">
+    Creating Subnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateways" class="md-nav__link">
+    Gateways
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-tables" class="md-nav__link">
+    Routing Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acl-tables-for-subnets" class="md-nav__link">
+    ACL Tables for Subnets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-groups-for-ec2" class="md-nav__link">
+    Security Groups for EC2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -495,18 +595,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../step-functions/" class="md-nav__link">
         Step Functions
       </a>
-      
     </li>
   
 
@@ -575,19 +668,196 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ip-cidr-notation" class="md-nav__link">
+    IP &amp; CIDR Notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-vpc" class="md-nav__link">
+    Creating VPC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-subnet" class="md-nav__link">
+    Creating Subnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateways" class="md-nav__link">
+    Gateways
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-tables" class="md-nav__link">
+    Routing Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acl-tables-for-subnets" class="md-nav__link">
+    ACL Tables for Subnets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-groups-for-ec2" class="md-nav__link">
+    Security Groups for EC2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/step-functions.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/vpc.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Step Functions</h1>
-                
-                
+                <h1 id="vpc">VPC</h1>
+<p>Amazon <strong>Virtual Private Cloud</strong> (<a href="https://aws.amazon.com/vpc/?vpc-blogs.sort-by=item.additionalFields.createdDate&amp;vpc-blogs.sort-order=desc">VPC</a>) is a service that lets you launch AWS resources in a logically isolated virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.</p>
+<table>
+<thead>
+<tr>
+<th>Terms</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPC</td>
+<td>An isolated network you create in the AWS cloud</td>
+</tr>
+<tr>
+<td>Subnet</td>
+<td>Smaller isolated networks inside VPC</td>
+</tr>
+<tr>
+<td>Internet Gateway</td>
+<td>Enable internet to VPC</td>
+</tr>
+<tr>
+<td>Route Tables</td>
+<td>Direct traffic at VPC or subnet</td>
+</tr>
+</tbody>
+</table>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc1.png?raw=true" style="width:100%" />
+  <figcaption>VPC with Subnets</figcaption>
+</figure>
+
+<h2 id="ip-cidr-notation">IP &amp; CIDR Notation</h2>
+<p>An example of a IPv4 address is <code>192.168.1.30</code>. If we want to specify a range of IPs between 192.168.1.0 and 192.168.1.255, we can use the Classless Inter-Domain Routing (CIDR) notation, to represent as <code>192.168.1.0/24</code></p>
+<p><strong>The higher the number after the /, the smaller the number of IP addresses in your network</strong>. For example, a range of 192.168.1.0/24 is smaller than 192.168.1.0/16. </p>
+<p>When working with networks in the AWS Cloud, you choose your network size by using CIDR notation. In AWS, the smallest IP range you can have is <strong>/28</strong>, which provides you 16 IP addresses. The largest IP range you can have is a <strong>/16</strong>, which provides you with 65,536 IP addresses.</p>
+<h2 id="creating-vpc">Creating VPC</h2>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="creating-subnet">Creating Subnet</h2>
+<p>As mentioned to compartmentalize our traffic in our VPC, we can divide them into subnets.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc3.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="gateways">Gateways</h2>
+<p>A subnet can be public or private depending on whether it is assign to an internet gateway. To do that, we first create an internet gateway, and associate it with our VPC.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc4.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="routing-tables">Routing Tables</h2>
+<p>A main route table is automatically create to route traffic to our VPC. However, we need further directions to guide the traffic to each subnet, for that, we can create custom route tables.</p>
+<p>First we association the table with our VPC.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc5.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Then, we edit the route, and add in <code>0.0.0.0/0</code> meaning it can take and deliver traffic from anywhere, and assign it to our previously created internet gateway.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc6.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Last, we edit the subnet associations and add the subnets we want internet access to.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc7.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Below shows an overall diagram on setting up of the VPC, subnets, and internet gateway and routing tables.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc-diagram.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="security">Security</h2>
+<h3 id="acl-tables-for-subnets">ACL Tables for Subnets</h3>
+<p>Think of a network ACL (access control list) as a firewall at the subnet level. A network ACL enables you to control what kind of traffic is allowed to enter or leave your subnet. You can configure this by setting up rules that define what you want to filter.</p>
+<p>Network ACL’s are considered stateless, so you need to include both the inbound and outbound ports used for the protocol. If you don’t include the outbound range, your server would respond but the traffic would never leave the subnet. </p>
+<h3 id="security-groups-for-ec2">Security Groups for EC2</h3>
+<p>Security group is a firewall you define for your EC2 instances. The default configuration of a security group blocks all inbound traffic and allows all outbound traffic.</p>
+<p>The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. To enable internet access, we need to open ports 80 (HTTP) and 443 (HTTPS). We only need to define inbound rules as security groups are <strong>stateful</strong>.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc-security-gp.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
                 
               
               
@@ -606,7 +876,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../api-gateway/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../iam/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -615,19 +885,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              API Gateway
+              IAM
             </div>
           </div>
         </a>
       
       
-        <a href="../systems-manager/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../cli/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Systems Manager
+              AWS CLI
             </div>
           </div>
           <div class="md-footer__button md-icon">
