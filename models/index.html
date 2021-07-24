@@ -14,7 +14,7 @@
     
     
       
-        <title>Intro - AWS Guide</title>
+        <title>Models - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#aws-models" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              Models
             
           </span>
         </div>
@@ -230,12 +230,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Basics
@@ -263,11 +265,56 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../models/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Models
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-responsibility-model" class="md-nav__link">
+    Shared Responsibility Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#well-architected-framework" class="md-nav__link">
+    Well-Architected Framework
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -416,14 +463,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Compute
@@ -439,20 +484,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../compute-intro/" class="md-nav__link">
         Intro
       </a>
-      
     </li>
   
 
@@ -646,6 +682,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-responsibility-model" class="md-nav__link">
+    Shared Responsibility Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#well-architected-framework" class="md-nav__link">
+    Well-Architected Framework
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -656,23 +714,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-intro.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/models.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction">Introduction</h1>
-<p>There are many compute services in AWS, but they can be generally divided into three types; <strong>Virtual Machines</strong> (Instances), <strong>Container Services</strong>, or <strong>Serverless</strong>. For VMs in AWS, this is called Elastic Compute Cloud (<strong>EC2</strong>).</p>
-<p>A summary of all compute services can be found <a href="https://aws.amazon.com/products/compute/">here</a>.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/compute-1.png?raw=true" style="width:100%" />
-  <figcaption>Types of Compute Services</figcaption>
-</figure>
-
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/compute-2.png?raw=true" style="width:100%" />
-  <figcaption>Other Compute Services</figcaption>
-</figure>
+                <h1 id="aws-models">AWS Models</h1>
+<h2 id="shared-responsibility-model">Shared Responsibility Model</h2>
+<p>AWS is responsible for <strong>Security of the Cloud</strong>, which includes all the infrastructure.</p>
+<p>Customers are responsible for <strong>Security in the Cloud</strong>, which include things like operating system patches, IAM user management, client and server encryption.</p>
+<h2 id="well-architected-framework">Well-Architected Framework</h2>
+<p>AWS <a href="https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&amp;wa-lens-whitepapers.sort-order=desc">Well-Architected Framework</a> describes the key concepts, design principles, and architectural best practices for designing and running workloads in the cloud.</p>
+<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/design-principles.html">Operational Excellence</a></strong>
+ * Perform operations as code
+ * Make frequent, small, reversible changes
+ * Refine operations procedures frequently
+ * Anticipate failure
+ * Learn from all operational failures</p>
+<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/security.html">Security</a></strong><br />
+ * Implement a strong identity foundation
+ * Enable traceability
+ * Apply security at all layers
+ * Automate security best practices
+ * Protect data in transit and at rest
+ * Keep people away from data
+ * Prepare for security events</p>
+<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/design-principles.html">Reliability</a></strong>
+ * Automatically recover from failure
+ * Test recovery procedures
+ * Scale horizontally to increase aggregate workload availability
+ * Stop guessing capacity
+ * Manage change in automation</p>
+<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/design-principles.html">Performance Efficiency</a></strong>
+ * Democratize advanced technologies
+ * Go global in minutes
+ * Use serverless architectures
+ * Experiment more often
+ * Consider mechanical sympathy </p>
+<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/design-principles.html">Cost Optimization</a></strong>
+ * Implement cloud financial management
+ * Adopt a consumption model
+ * Measure overall efficiency
+ * Stop spending money on undifferentiated heavy lifting
+ * Analyze and attribute expenditure</p>
                 
               
               
@@ -691,7 +775,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../cloud9/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../aws-infra/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -700,19 +784,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Cloud9
+              Infrastructure
             </div>
           </div>
         </a>
       
       
-        <a href="../compute-ec2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../billing/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              EC2
+              Billing
             </div>
           </div>
           <div class="md-footer__button md-icon">

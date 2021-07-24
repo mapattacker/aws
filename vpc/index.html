@@ -231,10 +231,61 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Basics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../aws-infra/" class="md-nav__link">
         Infrastructure
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        Models
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../billing/" class="md-nav__link">
+        Billing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -810,14 +861,14 @@
 <h2 id="creating-subnet">Creating Subnet</h2>
 <p>As mentioned to compartmentalize our traffic in our VPC, we can divide them into subnets.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc3.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc4.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
 <h2 id="gateways">Gateways</h2>
 <p>A subnet can be public or private depending on whether it is assign to an internet gateway. To do that, we first create an internet gateway, and associate it with our VPC.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc4.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc3.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
@@ -853,7 +904,7 @@
 <p>Network ACL’s are considered stateless, so you need to include both the inbound and outbound ports used for the protocol. If you don’t include the outbound range, your server would respond but the traffic would never leave the subnet. </p>
 <h3 id="security-groups-for-ec2">Security Groups for EC2</h3>
 <p>Security group is a firewall you define for your EC2 instances. The default configuration of a security group blocks all inbound traffic and allows all outbound traffic.</p>
-<p>The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. To enable internet access, we need to open ports 80 (HTTP) and 443 (HTTPS). We only need to define inbound rules as security groups are <strong>stateful</strong>.</p>
+<p>The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. To enable internet access, we need to open <code>ports 80 (HTTP)</code> and <code>443 (HTTPS)</code>. We only need to define inbound rules as security groups are <strong>stateful</strong>.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/vpc-security-gp.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
