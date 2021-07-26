@@ -21,18 +21,31 @@ theme:
 
 nav:
   - Home: index.md
-  - Infrastructure: aws-infra.md
-  - IAM: iam.md
+  - Basics: 
+        Infrastructure: aws-infra.md
+        Models: models.md
+        Billing: billing.md
+  - Security:
+      IAM: iam.md
+      VPC: vpc.md
   - Interact with AWS Services:
       AWS CLI: cli.md
       Boto3: boto3.md
       Cloud9: cloud9.md
-  - S3: s3.md
+  - Compute:
+      Intro: compute-intro.md
+      EC2: compute-ec2.md
+      Lambda: compute-lambda.md
+      Containers: compute-containers.md
+  - Storage:
+      Intro: storage-intro.md
+      S3: storage-s3.md
   - APIs:
       API Gateway: api-gateway.md
-      Lambda: lambda.md
   - Step Functions: step-functions.md
   - Systems Manager: systems-manager.md
+  - Monitoring:
+      Cloudwatch: cloudwatch.md
 
 repo_name: mapattacker/aws
 repo_url: https://github.com/mapattacker/aws

@@ -26,6 +26,19 @@ In the management console, we can choose the region at the top right corner of t
 
 Note that there are some services which are global by nature, while others are region specific. For example, switching to another region, you can still see the same IAM service with your data as it is a global service, while your EC2 instances will not appear as it is region specific.
 
+## Availability Zones
+
+AZ(s) or Availability Zones individual data centres within a region, but have redundancy from each other. 
+
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/infra-az.png?raw=true" style="width:60%" />
+  <figcaption></figcaption>
+</figure>
+
+## Edge Locations
+
+Edge Locations are **Content Delivery Network** (CDN) endpoints of CloudFront. 
+
 ## Interacting with AWS API
 
 There are 3 ways which we can interact with AWS services, which include the AWS Management Console, AWS Command Line Interface (AWS CLI), and AWS Software Development Kits (AWS SDKs).
