@@ -742,8 +742,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#billing" class="md-nav__link">
-    Billing
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboards" class="md-nav__link">
+    Dashboards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alarms" class="md-nav__link">
+    Alarms
   </a>
   
 </li>
@@ -787,8 +808,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#billing" class="md-nav__link">
-    Billing
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboards" class="md-nav__link">
+    Dashboards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alarms" class="md-nav__link">
+    Alarms
   </a>
   
 </li>
@@ -811,7 +853,26 @@
                 
                 
                 <h1 id="cloudwatch">Cloudwatch</h1>
-<h2 id="billing">Billing</h2>
+<h2 id="metrics">Metrics</h2>
+<p><strong>Metrics</strong> are data about the performance of your systems. By default, many services provide free metrics called <strong>basic monitoring</strong> for resources (such as Amazon EC2 instances, Amazon EBS volumes, and Amazon RDS DB instances). You can also enable <strong>detailed monitoring</strong> for some resources, such as your Amazon EC2 instances, or publish your own application metrics.</p>
+<h2 id="logs">Logs</h2>
+<p>CloudWatch <strong>Logs</strong> allows us to monitor, store, and access your log files from Amazon Elastic Compute Cloud (Amazon EC2) instances, AWS CloudTrail, Route 53, and other sources. </p>
+<p>Some services are set up to send log data to CloudWatch Logs with minimal effort like Lambda. All we need to do is to give the Lambda function the correct IAM permissions to post logs to CloudWatch Logs. Other services like EC2 requires more effort. We have to first install and configure the <strong>CloudWatch Logs agent</strong> in the instance.</p>
+<p>Some logging terminology are as follows.</p>
+<p><strong>Log event</strong>: A log event is a record of activity recorded by the application or resource being monitored, and it has a timestamp and an event message.</p>
+<p><strong>Log stream</strong>: Log events are then grouped into log streams, which are sequences of log events that all belong to the same resource being monitored. For example, logs for an EC2 instance are grouped together into a log stream that you can then filter or query for insights.</p>
+<p><strong>Log groups</strong>: Log streams are then organized into log groups. A log group is composed of log streams that all share the same retention and permissions settings. For example, if you have multiple EC2 instances hosting your application and you are sending application log data to CloudWatch Logs, you can group the log streams from each instance into one log group. This helps keep your logs organized.</p>
+<h2 id="dashboards">Dashboards</h2>
+<p>We can display metrics or logs as charts in a unified dashboard for easy monitoring of our resources.</p>
+<h2 id="alarms">Alarms</h2>
+<p>We can set cloudwatch alarms when a metric exceeds a certain threshold for a period of time.</p>
+<p>An alarm has three possible states.</p>
+<ul>
+<li><strong>OK</strong>: The metric is within the defined threshold. Everything appears to be operating like normal.</li>
+<li><strong>ALARM</strong>: The metric is outside of the defined threshold. This could be an operational issue.</li>
+<li><strong>INSUFFICIENT_DATA</strong>: The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</li>
+</ul>
+<p><strong>Billing</strong></p>
 <p>You can set billing alerts in Cloudwatch by following this <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">resource</a>. Note that billing metric data is stored in the US East (N. Virginia) Region and represents worldwide charges.</p>
                 
               
