@@ -14,7 +14,7 @@
     
     
       
-        <title>Models - AWS Guide</title>
+        <title>Elastic Load Balancer - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-models" class="md-skip">
+        <a href="#elastic-load-balancer" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Models
+              Elastic Load Balancer
             
           </span>
         </div>
@@ -230,14 +230,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Basics
@@ -265,56 +263,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Models
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
         Models
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#shared-responsibility-model" class="md-nav__link">
-    Shared Responsibility Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#well-architected-framework" class="md-nav__link">
-    Well-Architected Framework
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -505,12 +458,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Compute
@@ -574,11 +529,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../compute-elb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Elastic Load Balancer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Elastic Load Balancer
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    Benefits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-elb" class="md-nav__link">
+    Configuring ELB
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -806,15 +820,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#shared-responsibility-model" class="md-nav__link">
-    Shared Responsibility Model
+  <a href="#benefits" class="md-nav__link">
+    Benefits
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#well-architected-framework" class="md-nav__link">
-    Well-Architected Framework
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-elb" class="md-nav__link">
+    Configuring ELB
   </a>
   
 </li>
@@ -831,59 +859,71 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/models.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-elb.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="aws-models">AWS Models</h1>
-<h2 id="shared-responsibility-model">Shared Responsibility Model</h2>
-<p>AWS is responsible for <strong>Security of the Cloud</strong>, which includes all the infrastructure.</p>
-<p>Customers are responsible for <strong>Security in the Cloud</strong>, which include things like operating system patches, IAM user management, client and server encryption.</p>
-<h2 id="well-architected-framework">Well-Architected Framework</h2>
-<p>AWS <a href="https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&amp;wa-lens-whitepapers.sort-order=desc">Well-Architected Framework</a> describes the key concepts, design principles, and architectural best practices for designing and running workloads in the cloud.</p>
-<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/design-principles.html">Operational Excellence</a></strong></p>
+                <h1 id="elastic-load-balancer">Elastic Load Balancer</h1>
+<p>Load balancing refers to the process of distributing tasks across a set of resources. </p>
+<p>A typical request for an application would start from the browser of the client. It’s sent to a load balancer. Then, it’s sent to one of the EC2 instances that hosts the application. The return traffic would go back through the load balancer and back to the client browser. Thus, the load balancer is directly in the path of the traffic.</p>
+<h2 id="benefits">Benefits</h2>
 <ul>
-<li>Perform operations as code</li>
-<li>Make frequent, small, reversible changes</li>
-<li>Refine operations procedures frequently</li>
-<li>Anticipate failure</li>
-<li>Learn from all operational failures</li>
+<li>The fact that ELB can load balance to IP addresses means that it can work in a hybrid mode as well, where it also load balances to on-premises servers.</li>
+<li>ELB is highly available. The only option you have to ensure is that the load balancer is deployed across multiple Availability Zones.</li>
+<li>In terms of scalability, ELB automatically scales to meet the demand of the incoming traffic. It handles the incoming traffic and sends it to your backend application.</li>
 </ul>
-<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/security.html">Security</a></strong></p>
+<h2 id="types">Types</h2>
+<p>There are 3 types of load balancers in AWS.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb1.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>The differences between Application &amp; Network Load Balancers are as follows.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb2.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="components">Components</h2>
+<p>There are three components in an ELB.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb3.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
 <ul>
-<li>Implement a strong identity foundation</li>
-<li>Enable traceability</li>
-<li>Apply security at all layers</li>
-<li>Automate security best practices</li>
-<li>Protect data in transit and at rest</li>
-<li>Keep people away from data</li>
-<li>Prepare for security events</li>
+<li><strong>Listeners</strong>: The client connects to the listener. This is often referred to as client-side. To define a listener, a port must be provided as well as the protocol, depending on the load balancer type. There can be many listeners for a single load balancer.</li>
+<li><strong>Target groups</strong>: The backend servers, or server-side, is defined in one or more target groups. This is where you define the type of backend you want to direct traffic to, such as EC2 Instances, AWS Lambda functions, or IP addresses. Also, a health check needs to be defined for each target group.</li>
+<li><strong>Rules</strong>: To associate a target group to a listener, a rule must be used. Rules are made up of a condition that can be the source IP address of the client and a condition to decide which target group to send the traffic to.</li>
 </ul>
-<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/design-principles.html">Reliability</a></strong></p>
-<ul>
-<li>Automatically recover from failure</li>
-<li>Test recovery procedures</li>
-<li>Scale horizontally to increase aggregate workload availability</li>
-<li>Stop guessing capacity</li>
-<li>Manage change in automation</li>
-</ul>
-<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/design-principles.html">Performance Efficiency</a></strong></p>
-<ul>
-<li>Democratize advanced technologies</li>
-<li>Go global in minutes</li>
-<li>Use serverless architectures</li>
-<li>Experiment more often</li>
-<li>Consider mechanical sympathy </li>
-</ul>
-<p><strong><a href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/design-principles.html">Cost Optimization</a></strong></p>
-<ul>
-<li>Implement cloud financial management</li>
-<li>Adopt a consumption model</li>
-<li>Measure overall efficiency</li>
-<li>Stop spending money on undifferentiated heavy lifting</li>
-<li>Analyze and attribute expenditure</li>
-</ul>
+<p>Health checks are important to ensure that an instance is working fine before the load balancer directs traffic to it.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb4.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="configuring-elb">Configuring ELB</h2>
+<p>Below are the steps to build an Application Load Balancer.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb5.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>We need to set the listeners, and define the VPC, AZs and their corresponding subnets within each AZ.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb6.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Second, we select the target group, and health check route.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/elb7.png?raw=true" style="width:80%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Last, we select the targets, which in this case are the ec2 instances in the earlier selected subnets.</p>
                 
               
               
@@ -902,7 +942,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../aws-infra/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../compute-containers/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -911,19 +951,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Infrastructure
+              Containers
             </div>
           </div>
         </a>
       
       
-        <a href="../billing/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../storage-intro/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Billing
+              Intro
             </div>
           </div>
           <div class="md-footer__button md-icon">
