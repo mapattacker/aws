@@ -14,7 +14,7 @@
     
     
       
-        <title>Cloudwatch - AWS Guide</title>
+        <title>IAM - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloudwatch" class="md-skip">
+        <a href="#iam" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloudwatch
+              IAM
             
           </span>
         </div>
@@ -362,14 +362,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Monitoring
@@ -385,70 +383,35 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cloudwatch
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Cloudwatch
+    <li class="md-nav__item">
+      <a href="../monitor-cloudwatch.md" class="md-nav__link">
+        CloudWatch
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
+  
+
+          
+            
   
   
-    
+  
+    <li class="md-nav__item">
+      <a href="../monitor-cloudtrail.md" class="md-nav__link">
+        CloudTrail
+      </a>
+    </li>
+  
+
+          
+            
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#metrics" class="md-nav__link">
-    Metrics
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logs" class="md-nav__link">
-    Logs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dashboards" class="md-nav__link">
-    Dashboards
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alarms" class="md-nav__link">
-    Alarms
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../monitor-trusted-advisor.md" class="md-nav__link">
+        Trusted Advisor
+      </a>
     </li>
   
 
@@ -488,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iam/" class="md-nav__link">
+      <a href="../iam.md" class="md-nav__link">
         IAM
       </a>
     </li>
@@ -820,29 +783,89 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#metrics" class="md-nav__link">
-    Metrics
+  <a href="#security-models" class="md-nav__link">
+    Security Models
   </a>
+  
+    <nav class="md-nav" aria-label="Security Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-responsibility-model" class="md-nav__link">
+    Shared Responsibility Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principle-of-least-privilege" class="md-nav__link">
+    Principle of Least Privilege
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logs" class="md-nav__link">
-    Logs
+  <a href="#user-access" class="md-nav__link">
+    User Access
   </a>
+  
+    <nav class="md-nav" aria-label="User Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-user" class="md-nav__link">
+    Root User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-groups" class="md-nav__link">
+    User Groups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dashboards" class="md-nav__link">
-    Dashboards
+  <a href="#roles" class="md-nav__link">
+    Roles
   </a>
+  
+    <nav class="md-nav" aria-label="Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-provider" class="md-nav__link">
+    Identity Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arn" class="md-nav__link">
+    ARN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#alarms" class="md-nav__link">
-    Alarms
+  <a href="#json-policy-syntax" class="md-nav__link">
+    JSON Policy Syntax
   </a>
   
 </li>
@@ -859,33 +882,126 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/cloudwatch.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/security-iam.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cloudwatch">Cloudwatch</h1>
-<h2 id="metrics">Metrics</h2>
-<p><strong>Metrics</strong> are data about the performance of your systems. By default, many services provide free metrics called <strong>basic monitoring</strong> for resources (such as Amazon EC2 instances, Amazon EBS volumes, and Amazon RDS DB instances). You can also enable <strong>detailed monitoring</strong> for some resources, such as your Amazon EC2 instances, or publish your own application metrics.</p>
-<h2 id="logs">Logs</h2>
-<p>CloudWatch <strong>Logs</strong> allows us to monitor, store, and access your log files from Amazon Elastic Compute Cloud (Amazon EC2) instances, AWS CloudTrail, Route 53, and other sources. </p>
-<p>Some services are set up to send log data to CloudWatch Logs with minimal effort like Lambda. All we need to do is to give the Lambda function the correct IAM permissions to post logs to CloudWatch Logs. Other services like EC2 requires more effort. We have to first install and configure the <strong>CloudWatch Logs agent</strong> in the instance.</p>
-<p>Some logging terminology are as follows.</p>
-<p><strong>Log event</strong>: A log event is a record of activity recorded by the application or resource being monitored, and it has a timestamp and an event message.</p>
-<p><strong>Log stream</strong>: Log events are then grouped into log streams, which are sequences of log events that all belong to the same resource being monitored. For example, logs for an EC2 instance are grouped together into a log stream that you can then filter or query for insights.</p>
-<p><strong>Log groups</strong>: Log streams are then organized into log groups. A log group is composed of log streams that all share the same retention and permissions settings. For example, if you have multiple EC2 instances hosting your application and you are sending application log data to CloudWatch Logs, you can group the log streams from each instance into one log group. This helps keep your logs organized.</p>
-<h2 id="dashboards">Dashboards</h2>
-<p>We can display metrics or logs as charts in a unified dashboard for easy monitoring of our resources.</p>
-<h2 id="alarms">Alarms</h2>
-<p>We can set cloudwatch alarms when a metric exceeds a certain threshold for a period of time.</p>
-<p>An alarm has three possible states.</p>
+                <h1 id="iam">IAM</h1>
+<p>AWS Identity and Access Management (<a href="https://aws.amazon.com/iam/">IAM</a>) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.</p>
+<p>There are two important terms in security. The first is <strong>Authentication</strong>; being verifying if someone is who they say they are because they logged in with the proper credentials. We can create new user login accounts for this. The second term is <strong>Authorization</strong>, where the policies assign permissions to allow or deny you access to actions for certain AWS resources.</p>
+<hr>
+
+<h2 id="security-models">Security Models</h2>
+<h3 id="shared-responsibility-model">Shared Responsibility Model</h3>
+<p>Both AWS and yourself have responsibilities in security. AWS are responsibility for security of the cloud, which include the global infrastructure, and software to the virtualization layer. You are responsible for the security in the cloud.</p>
+<h3 id="principle-of-least-privilege">Principle of Least Privilege</h3>
+<p>An important security recommendation is the principle of least privilege, where we only assign policies to a resource or person based on what they require only.</p>
+<hr>
+
+<h2 id="user-access">User Access</h2>
+<p>Users have static credential keys; i.e. username, password, access keys, and secret keys.</p>
+<h3 id="root-user">Root User</h3>
+<p>When we first create a AWS account, it will be created as a root user, having full access over this account. It will be wise to create a user for future logins for security reasons, as well as setting an <strong>MFA</strong> for this root account.</p>
+<h3 id="user-groups">User Groups</h3>
+<p>We can add new users and assign policy permissions to authorize these users. However, it is recommended instead to assign <strong>user groups</strong> with  permissions to these groups, and add users to these user groups. This way, the groups are tied to specific job roles and make management easier.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/iam-group.png?raw=true" style="width:80%" />
+  <figcaption>AWS Cloud Essentials Course</figcaption>
+</figure>
+
+<hr>
+
+<h2 id="roles">Roles</h2>
+<p>For AWS services requiring programmatic access to other services, a role based access needs to be created. An IAM role is an identity you can create that has specific permissions with credentials that are <strong>valid for short durations</strong>. Roles do not have static login credentials.</p>
+<h3 id="identity-provider">Identity Provider</h3>
+<p>If you have an organization that spans many employees and multiple AWS accounts, you may want your employees to sign in with a single credential. This can be done using a third-party identity provider, which uses AWS roles to grant access to each of these so-called <strong>federated user</strong>.</p>
+<p>We can also use <strong>AWS SSO</strong>, an IdP that lets your users sign in to a user portal with a single set of credentials. It then provides them access to all their assigned accounts and applications in one central location.</p>
+<h3 id="arn">ARN</h3>
+<p><a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">AWS Resource Names</a> (ARN) are</p>
+<blockquote>
+<p>uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls.</p>
+</blockquote>
+<p>Every AWS service that you create have an ARN.</p>
+<hr>
+
+<h2 id="json-policy-syntax">JSON Policy Syntax</h2>
+<p>There are various <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html">elements</a> in a policy. Action indicates the various actions an AWS service can perform, Effect indicates to allow or deny the actions, while the Resource is the specific service (by ARN) that you launched that have those actions.</p>
 <ul>
-<li><strong>OK</strong>: The metric is within the defined threshold. Everything appears to be operating like normal.</li>
-<li><strong>ALARM</strong>: The metric is outside of the defined threshold. This could be an operational issue.</li>
-<li><strong>INSUFFICIENT_DATA</strong>: The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</li>
+<li><strong>Version</strong> element defines the version of the policy language. It specifies the language syntax rules that are needed by AWS to process a policy. To use all the available policy features, include "Version": "2012-10-17" before the "Statement" element in all your policies.</li>
+<li><strong>Effect</strong> element specifies whether the statement will Allow or Deny access to a particular resource.</li>
+<li><strong>Action</strong> element describes the type of action that should be allowed or denied. In the above policy, the action is "*". This is called a wildcard, and it is used to symbolize every action inside your AWS account.</li>
+<li><strong>Resource</strong> element specifies the object or objects that the policy statement covers. In the policy example above, the resource is also the wildcard "*". This represents all resources inside your AWS console.</li>
+<li><strong>Principal</strong> element specifies the user, account, service, or other entity that is allowed or denied access to a resource. </li>
 </ul>
-<p><strong>Billing</strong></p>
-<p>You can set billing alerts in Cloudwatch by following this <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">resource</a>. Note that billing metric data is stored in the US East (N. Virginia) Region and represents worldwide charges.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;VisualEditor0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;s3:GetLifecycleConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketTagging&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetInventoryConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectVersionTagging&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketLogging&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetAccelerateConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketPolicy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectVersionTorrent&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectAcl&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetEncryptionConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketObjectLockConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetIntelligentTieringConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketRequestPayment&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectVersionAcl&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectTagging&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetMetricsConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketOwnershipControls&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketPublicAccessBlock&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketPolicyStatus&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectRetention&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketWebsite&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketVersioning&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketAcl&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectLegalHold&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketNotification&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetReplicationConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectTorrent&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketCORS&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetAnalyticsConfiguration&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectVersionForReplication&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetBucketLocation&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObjectVersion&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:s3:::dragon-data-sy/*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::dragon-data-sy&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This can be further shorterned by using the asterisk symbol.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;VisualEditor0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;s3:Get*&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:s3:::dragon-data-sy/*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::dragon-data-sy&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               
@@ -901,39 +1017,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../cloud9/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Cloud9
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../iam/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              IAM
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
