@@ -14,7 +14,7 @@
     
     
       
-        <title>Intro - AWS Guide</title>
+        <title>IP - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#databases" class="md-skip">
+        <a href="#ip-address" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              IP
             
           </span>
         </div>
@@ -482,12 +482,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Networking
@@ -515,11 +517,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../networking-ip/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         IP
       </a>
+      
     </li>
   
 
@@ -692,14 +703,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       <label class="md-nav__link" for="__nav_9">
         Database
@@ -715,20 +724,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../db-intro/" class="md-nav__link">
         Intro
       </a>
-      
     </li>
   
 
@@ -863,28 +863,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/db-intro.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/networking-ip.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="databases">Databases</h1>
-<p>Amazon has many database offerings, from its traditional RDS, to other various purpose built databases.</p>
+                <h1 id="ip-address">IP Address</h1>
+<p>Internet Protocol Address is a numerical value used for host or network interface identification and location addressing.</p>
+<p>There are two notations of IP address, the IPv4 and IPv6.</p>
+<p>In AWS there are 3 types of IP addresses.</p>
+<table>
+<thead>
+<tr>
+<th>Private IP</th>
+<th>Public IP</th>
+<th>Elastic IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retained with instance stop</td>
+<td>Change when instance restart</td>
+<td>Associated to Private IP</td>
+</tr>
+<tr>
+<td>All instances will have</td>
+<td>Only Public instances have</td>
+<td>For Public IPs only</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>Can be dissociated and linked to a different Private IP</td>
+</tr>
+<tr>
+<td>Free</td>
+<td>Free</td>
+<td>Charged only when associated but not used</td>
+</tr>
+</tbody>
+</table>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/db-intro1.png?raw=true" style="width:90%" />
-  <figcaption>Databases by AWS</figcaption>
-</figure>
-
-<p>Below are other more specific use-cases for various databases.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/db-intro3.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
-</figure>
-
-<p>Databases are usually classified to be either operational / transactional, or analytical (aka data warehouse).</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/db-intro2.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ip1.png?raw=true" style="width:100%" />
+  <figcaption>AWS Cloud Essentials Course</figcaption>
 </figure>
                 
               
@@ -904,7 +925,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../storage-s3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../networking-vpc/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -913,19 +934,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              S3
+              VPC
             </div>
           </div>
         </a>
       
       
-        <a href="../db-rds/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../compute-intro/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              RDS
+              Intro
             </div>
           </div>
           <div class="md-footer__button md-icon">
