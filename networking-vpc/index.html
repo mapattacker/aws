@@ -458,18 +458,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security-vpc.md" class="md-nav__link">
-        VPC
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -559,8 +547,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gateways" class="md-nav__link">
-    Gateways
+  <a href="#internet-gateway" class="md-nav__link">
+    Internet Gateway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat-gateway" class="md-nav__link">
+    NAT Gateway
   </a>
   
 </li>
@@ -965,8 +960,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gateways" class="md-nav__link">
-    Gateways
+  <a href="#internet-gateway" class="md-nav__link">
+    Internet Gateway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat-gateway" class="md-nav__link">
+    NAT Gateway
   </a>
   
 </li>
@@ -1072,10 +1074,17 @@
   <figcaption></figcaption>
 </figure>
 
-<h2 id="gateways">Gateways</h2>
+<h2 id="internet-gateway">Internet Gateway</h2>
 <p>A subnet can be public or private depending on whether it is assign to an internet gateway. To do that, we first create an internet gateway, and associate it with our VPC.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/vpc3.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="nat-gateway">NAT Gateway</h2>
+<p>Sometimes we need our private instances to connect to the internet for patches, etc. To do that we need to create a NAT gateway, and configure the private route table to connect to the nat-gateway-id.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc8.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
@@ -1142,6 +1151,19 @@
   <img src="https://github.com/mapattacker/aws/blob/master/images/vpc-security-gp.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
+
+<h1 id="vpc-peering">VPC Peering</h1>
+<p>To connect between different VPCs, whether in different accounts or regions, we use VPC Peering.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc9.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h1 id="on-premise-to-vpcs">On-Premise to VPCs</h1>
+<p><strong>AWS VPN</strong> connects through the internet to AWS.</p>
+<p><strong>AWS Direct Connect</strong> connects through a private network to AWS.</p>
+<p><strong>AWS Transit Gateway</strong> is used to connect between different VPCs (like VPC Peering) to on-premise networks, including VPN and Direct Connect.</p>
+<p><strong>AWS Outposts</strong> allows running AWS Services within on-premise.</p>
                 
               
               
