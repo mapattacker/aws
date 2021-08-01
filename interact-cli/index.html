@@ -14,7 +14,7 @@
     
     
       
-        <title>IP - AWS Guide</title>
+        <title>AWS CLI - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ip-address" class="md-skip">
+        <a href="#aws-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IP
+              AWS CLI
             
           </span>
         </div>
@@ -494,14 +494,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Networking
@@ -529,20 +527,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../networking-ip/" class="md-nav__link">
         IP
       </a>
-      
     </li>
   
 
@@ -865,6 +854,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -875,50 +893,54 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/networking-ip.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/interact-cli.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="ip-address">IP Address</h1>
-<p>Internet Protocol Address is a numerical value used for host or network interface identification and location addressing.</p>
-<p>There are two notations of IP address, the IPv4 and IPv6.</p>
-<p>In AWS there are 3 types of IP addresses.</p>
+                <h1 id="aws-cli">AWS CLI</h1>
+<p>The <a href="https://aws.amazon.com/cli/">AWS Command Line Interface</a>, <strong>AWS CLI</strong> for short, allows us to easily access AWS services in the terminal. </p>
+<h2 id="installation">Installation</h2>
+<p>If you’re using Amazon EC2 instances or AWS Cloud9, the tools are already installed for you.</p>
+<p>To install in your local machine, refer to this <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">guide</a>.</p>
+<h2 id="command-syntax">Command Syntax</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># command syntax</span>
+aws --&lt;optional-command&gt; &lt;main-command&gt; &lt;subcommand&gt; &lt;parameters&gt;
+
+<span class="c1"># e.g.</span>
+aws s3 mb s3://bucketname
+</code></pre></div>
+<p>We can find more info in the online CLI help docs, or just type <code>aws &lt;optional: command&gt; &lt;optional: subcommand&gt; help</code>, e.g. <code>aws s3 mb help</code> if needed.</p>
+<h2 id="configure">Configure</h2>
+<p>To make it easier to send commands without the need to enter the credentials everytime, we can set a default profile or a specific profile name with those variables. The 4 credentials are the <strong>access and secret keys</strong>, <strong>region</strong>, and <strong>output format</strong> (default is <code>json</code>).</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/aws-cli1.png?raw=true" style="width:50%" />
+  <figcaption>AWS Configure</figcaption>
+</figure>
+
 <table>
 <thead>
 <tr>
-<th>Private IP</th>
-<th>Public IP</th>
-<th>Elastic IP</th>
+<th>Cmd</th>
+<th>Desc</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Retained with instance stop</td>
-<td>Change when instance restart</td>
-<td>Associated to Private IP</td>
+<td><code>aws configure</code></td>
+<td>enter access, secret &amp; region names, for default profile</td>
 </tr>
 <tr>
-<td>All instances will have</td>
-<td>Only Public instances have</td>
-<td>For Public IPs only</td>
+<td><code>aws configure --profile &lt;name&gt;</code></td>
+<td>enter access, secret &amp; region names, based on a specific name</td>
 </tr>
 <tr>
-<td>-</td>
-<td>-</td>
-<td>Can be dissociated and linked to a different Private IP</td>
-</tr>
-<tr>
-<td>Free</td>
-<td>Free</td>
-<td>Charged only when associated but not used</td>
+<td><code>aws s3 ls --profile &lt;name&gt;</code></td>
+<td>enter commands based on profile</td>
 </tr>
 </tbody>
 </table>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/ip1.png?raw=true" style="width:100%" />
-  <figcaption>AWS Cloud Essentials Course</figcaption>
-</figure>
+<p>These credentials are stored in <code>~/.aws/credentials</code>.</p>
                 
               
               
@@ -934,39 +956,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../networking-vpc/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              VPC
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../compute-intro/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Intro
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

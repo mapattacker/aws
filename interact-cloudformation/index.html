@@ -14,7 +14,7 @@
     
     
       
-        <title>AWS CLI - AWS Guide</title>
+        <title>CloudFormation - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-cli" class="md-skip">
+        <a href="#cloudformation" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS CLI
+              CloudFormation
             
           </span>
         </div>
@@ -319,63 +319,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          AWS CLI
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cli.md" class="md-nav__link">
         AWS CLI
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-syntax" class="md-nav__link">
-    Command Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure" class="md-nav__link">
-    Configure
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -385,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../boto3/" class="md-nav__link">
+      <a href="../boto3.md" class="md-nav__link">
         Boto3
       </a>
     </li>
@@ -397,9 +345,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud9/" class="md-nav__link">
+      <a href="../cloud9.md" class="md-nav__link">
         Cloud9
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CloudFormation
+      </a>
+      
     </li>
   
 
@@ -465,6 +434,18 @@
     <li class="md-nav__item">
       <a href="../monitor-health/" class="md-nav__link">
         Health
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor-xray.md" class="md-nav__link">
+        X-Ray
       </a>
     </li>
   
@@ -884,35 +865,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-syntax" class="md-nav__link">
-    Command Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure" class="md-nav__link">
-    Configure
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -923,54 +875,33 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/cli.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/interact-cloudformation.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="aws-cli">AWS CLI</h1>
-<p>The <a href="https://aws.amazon.com/cli/">AWS Command Line Interface</a>, <strong>AWS CLI</strong> for short, allows us to easily access AWS services in the terminal. </p>
-<h2 id="installation">Installation</h2>
-<p>If you’re using Amazon EC2 instances or AWS Cloud9, the tools are already installed for you.</p>
-<p>To install in your local machine, refer to this <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">guide</a>.</p>
-<h2 id="command-syntax">Command Syntax</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># command syntax</span>
-aws --&lt;optional-command&gt; &lt;main-command&gt; &lt;subcommand&gt; &lt;parameters&gt;
-
-<span class="c1"># e.g.</span>
-aws s3 mb s3://bucketname
+                <h1 id="cloudformation">CloudFormation</h1>
+<p>AWS CloudFormation allows us to deploy our AWS infrastructure <strong>stack</strong> inside a template file. This template file is then uploaded to CloudFormation build the stack.</p>
+<p>We can define the template in either a JSON or YAML format.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span>
+  <span class="nt">Ec2Instance</span><span class="p">:</span>
+    <span class="nt">Type</span><span class="p">:</span> <span class="s">&#39;AWS::EC2::Instance&#39;</span>
+    <span class="nt">Properties</span><span class="p">:</span>
+      <span class="nt">SecurityGroups</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="kt">!Ref</span> <span class="l l-Scalar l-Scalar-Plain">InstanceSecurityGroup</span>
+      <span class="nt">KeyName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mykey</span>
+      <span class="nt">ImageId</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+  <span class="nt">InstanceSecurityGroup</span><span class="p">:</span>
+    <span class="nt">Type</span><span class="p">:</span> <span class="s">&#39;AWS::EC2::SecurityGroup&#39;</span>
+    <span class="nt">Properties</span><span class="p">:</span>
+      <span class="nt">GroupDescription</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable SSH access via port 22</span>
+      <span class="nt">SecurityGroupIngress</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">IpProtocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+          <span class="nt">FromPort</span><span class="p">:</span> <span class="s">&#39;22&#39;</span>
+          <span class="nt">ToPort</span><span class="p">:</span> <span class="s">&#39;22&#39;</span>
+          <span class="nt">CidrIp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span>
 </code></pre></div>
-<p>We can find more info in the online CLI help docs, or just type <code>aws &lt;optional: command&gt; &lt;optional: subcommand&gt; help</code>, e.g. <code>aws s3 mb help</code> if needed.</p>
-<h2 id="configure">Configure</h2>
-<p>To make it easier to send commands without the need to enter the credentials everytime, we can set a default profile or a specific profile name with those variables. The 4 credentials are the <strong>access and secret keys</strong>, <strong>region</strong>, and <strong>output format</strong> (default is <code>json</code>).</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/aws-cli1.png?raw=true" style="width:50%" />
-  <figcaption>AWS Configure</figcaption>
-</figure>
-
-<table>
-<thead>
-<tr>
-<th>Cmd</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>aws configure</code></td>
-<td>enter access, secret &amp; region names, for default profile</td>
-</tr>
-<tr>
-<td><code>aws configure --profile &lt;name&gt;</code></td>
-<td>enter access, secret &amp; region names, based on a specific name</td>
-</tr>
-<tr>
-<td><code>aws s3 ls --profile &lt;name&gt;</code></td>
-<td>enter commands based on profile</td>
-</tr>
-</tbody>
-</table>
-<p>These credentials are stored in <code>~/.aws/credentials</code>.</p>
+<p>CloudFormation is similar to <a href="https://www.terraform.io">Terraform</a> with the difference that Terraform can be used to serve multiple cloud providers, not just AWS.</p>
                 
               
               
@@ -1004,13 +935,13 @@ aws s3 mb s3://bucketname
         </a>
       
       
-        <a href="../boto3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../monitor-cloudwatch/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Boto3
+              CloudWatch
             </div>
           </div>
           <div class="md-footer__button md-icon">
