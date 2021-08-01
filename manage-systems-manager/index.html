@@ -14,7 +14,7 @@
     
     
       
-        <title>CloudFormation - AWS Guide</title>
+        <title>Systems Manager - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloudformation" class="md-skip">
+        <a href="#systems-manager" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CloudFormation
+              Systems Manager
             
           </span>
         </div>
@@ -296,14 +296,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Interact with AWS Services
@@ -355,20 +353,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../interact-cloudformation/" class="md-nav__link">
         CloudFormation
       </a>
-      
     </li>
   
 
@@ -916,6 +905,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automation-and-run-command" class="md-nav__link">
+    Automation and Run Command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventory" class="md-nav__link">
+    Inventory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch-manager" class="md-nav__link">
+    Patch Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance" class="md-nav__link">
+    Compliance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-manager" class="md-nav__link">
+    Session Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-store" class="md-nav__link">
+    Parameter Store
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -926,33 +965,51 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/interact-cloudformation.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/manage-systems-manager.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cloudformation">CloudFormation</h1>
-<p>AWS CloudFormation allows us to deploy our AWS infrastructure <strong>stack</strong> inside a template file. This template file is then uploaded to CloudFormation build the stack.</p>
-<p>We can define the template in either a JSON or YAML format.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span>
-  <span class="nt">Ec2Instance</span><span class="p">:</span>
-    <span class="nt">Type</span><span class="p">:</span> <span class="s">&#39;AWS::EC2::Instance&#39;</span>
-    <span class="nt">Properties</span><span class="p">:</span>
-      <span class="nt">SecurityGroups</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="kt">!Ref</span> <span class="l l-Scalar l-Scalar-Plain">InstanceSecurityGroup</span>
-      <span class="nt">KeyName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mykey</span>
-      <span class="nt">ImageId</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
-  <span class="nt">InstanceSecurityGroup</span><span class="p">:</span>
-    <span class="nt">Type</span><span class="p">:</span> <span class="s">&#39;AWS::EC2::SecurityGroup&#39;</span>
-    <span class="nt">Properties</span><span class="p">:</span>
-      <span class="nt">GroupDescription</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable SSH access via port 22</span>
-      <span class="nt">SecurityGroupIngress</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">IpProtocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
-          <span class="nt">FromPort</span><span class="p">:</span> <span class="s">&#39;22&#39;</span>
-          <span class="nt">ToPort</span><span class="p">:</span> <span class="s">&#39;22&#39;</span>
-          <span class="nt">CidrIp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span>
+                <h1 id="systems-manager">Systems Manager</h1>
+<p>The AWS Systems Manager helps to manage multiple AWS resources including EC2, S3, RDS, etc.</p>
+<p>This includes automation, run command, inventory, and others stated below.</p>
+<h2 id="automation-and-run-command">Automation and Run Command</h2>
+<p>Systems Manager have feature called document, whereby you can select some automation or commands to various AWS resources.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sys-manager1.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="inventory">Inventory</h2>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sys-manager2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="patch-manager">Patch Manager</h2>
+<p>The patch manager can deploy system and software packages to groups of EC2 instances and also on-premises</p>
+<h2 id="compliance">Compliance</h2>
+<p>This feature can scan our managed instances for patch compliance and configuration inconsistencies.</p>
+<h2 id="session-manager">Session Manager</h2>
+<p>The session manager allows us to get a secure session into your instances without having to open the firewall rules to
+allow access to those other ports. This means that you don't need to use the secure shell, the SSH protocol or the remote desktop to access our instances.</p>
+<h2 id="parameter-store">Parameter Store</h2>
+<p>The <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html">parameter store</a> provides</p>
+<blockquote>
+<p>secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data.</p>
+</blockquote>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/parameter-store1.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Example of using parameter store to extract some variables.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
+
+<span class="n">ssm</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;ssm&#39;</span><span class="p">,</span> <span class="s1">&#39;ap-southeast-1&#39;</span><span class="p">)</span>
+<span class="n">bucket_name</span> <span class="o">=</span> <span class="n">ssm</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span> <span class="n">Name</span><span class="o">=</span><span class="s1">&#39;dragon_data_bucket_name&#39;</span><span class="p">,</span><span class="n">WithDecryption</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">ssm</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span> <span class="n">Name</span><span class="o">=</span><span class="s1">&#39;dragon_data_file_name&#39;</span><span class="p">,</span><span class="n">WithDecryption</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">][</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
 </code></pre></div>
-<p>CloudFormation is similar to <a href="https://www.terraform.io">Terraform</a> with the difference that Terraform can be used to serve multiple cloud providers, not just AWS.</p>
                 
               
               
@@ -968,39 +1025,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../interact-cloud9/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Cloud9
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../monitor-cloudwatch/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              CloudWatch
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
