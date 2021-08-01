@@ -38,12 +38,21 @@ As mentioned to compartmentalize our traffic in our VPC, we can divide them into
   <figcaption></figcaption>
 </figure>
 
-## Gateways
+## Internet Gateway
 
 A subnet can be public or private depending on whether it is assign to an internet gateway. To do that, we first create an internet gateway, and associate it with our VPC.
 
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/vpc3.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+## NAT Gateway
+
+Sometimes we need our private instances to connect to the internet for patches, etc. To do that we need to create a NAT gateway, and configure the private route table to connect to the nat-gateway-id.
+
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc8.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
@@ -83,9 +92,9 @@ Below shows an overall diagram on setting up of the VPC, subnets, and internet g
 
 ### ACL Tables for Subnets
 
-Think of a network ACL (access control list) as a firewall at the subnet level. A network ACL enables you to control what kind of traffic is allowed to enter or leave your subnet. You can configure this by setting up rules that define what you want to filter.
+Network ACL (Access Control List) is a firewall at the subnet level. A network ACL enables you to control what kind of traffic is allowed to enter or leave your subnet. You can configure this by setting up rules that define what you want to filter.
 
-Network ACL’s are considered stateless, so you need to include both the inbound and outbound ports used for the protocol. If you don’t include the outbound range, your server would respond but the traffic would never leave the subnet. 
+Network ACL’s are considered **stateless**, so you need to include both the inbound and outbound ports used for the protocol. If you don’t include the outbound range, your server would respond but the traffic would never leave the subnet. 
 
 ### Security Groups for EC2
 
@@ -93,7 +102,34 @@ Security group is a firewall you define for your EC2 instances. The default conf
 
 The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. To enable internet access, we need to open `ports 80 (HTTP)` and `443 (HTTPS)`. We only need to define inbound rules as security groups are **stateful**.
 
+| Network ACL | Security Group |
+|-|-|
+| Subnet Firewall | Instance Firewall |
+| Stateless |  Stateful |
+| Ordered Rules |  Non-Ordered Rules |
+| Allow or Deny Rules |  Only Allow Rules |
+
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/vpc-security-gp.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
+
+
+## VPC Peering
+
+To connect between different VPCs, whether in different accounts or regions, we use VPC Peering.
+
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/vpc9.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+## On-Premise to VPCs
+
+**AWS VPN** connects through the internet to AWS.
+
+**AWS Direct Connect** connects through a private network to AWS.
+
+**AWS Transit Gateway** is used to connect between different VPCs (like VPC Peering) to on-premise networks, including VPN and Direct Connect.
+
+**AWS Outposts** allows running AWS Services within on-premise.

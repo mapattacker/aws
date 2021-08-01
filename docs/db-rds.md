@@ -1,6 +1,6 @@
 # RDS
 
-Relational Database Service (RDS) is a suite of relational databases provided by AWS.
+Relational Database Service (RDS) is a suite of relational databases provided by AWS. They run on EC2 instances under the hood.
 
  * Commercial: Oracle, SQL Server
  * Open Source: MySQL, PostgreSQL, MariaDB

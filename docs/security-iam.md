@@ -62,7 +62,13 @@ Every AWS service that you create have an ARN.
 
 ## JSON Policy Syntax
 
-There are three main keys in a policy; `Action`, `Effect`, and `Resource`. Action indicates the various actions an AWS service can perform, Effect indicates to allow or deny the actions, while the Resource is the specific service (by ARN) that you launched that have those actions.
+There are various [elements](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in a policy. Action indicates the various actions an AWS service can perform, Effect indicates to allow or deny the actions, while the Resource is the specific service (by ARN) that you launched that have those actions.
+
+ * **Version** element defines the version of the policy language. It specifies the language syntax rules that are needed by AWS to process a policy. To use all the available policy features, include "Version": "2012-10-17" before the "Statement" element in all your policies.
+ * **Effect** element specifies whether the statement will Allow or Deny access to a particular resource.
+ * **Action** element describes the type of action that should be allowed or denied. In the above policy, the action is "*". This is called a wildcard, and it is used to symbolize every action inside your AWS account.
+ * **Resource** element specifies the object or objects that the policy statement covers. In the policy example above, the resource is also the wildcard "*". This represents all resources inside your AWS console.
+ * **Principal** element specifies the user, account, service, or other entity that is allowed or denied access to a resource. 
 
 ```json
 {
