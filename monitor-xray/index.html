@@ -14,7 +14,7 @@
     
     
       
-        <title>CloudFormation - AWS Guide</title>
+        <title>X-Ray - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloudformation" class="md-skip">
+        <a href="#x-ray" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CloudFormation
+              X-Ray
             
           </span>
         </div>
@@ -296,14 +296,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Interact with AWS Services
@@ -355,20 +353,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../interact-cloudformation/" class="md-nav__link">
         CloudFormation
       </a>
-      
     </li>
   
 
@@ -385,12 +374,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Monitoring
@@ -442,11 +433,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../monitor-xray/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         X-Ray
       </a>
+      
     </li>
   
 
@@ -875,33 +875,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/interact-cloudformation.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/monitor-xray.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cloudformation">CloudFormation</h1>
-<p>AWS CloudFormation allows us to deploy our AWS infrastructure <strong>stack</strong> inside a template file. This template file is then uploaded to CloudFormation build the stack.</p>
-<p>We can define the template in either a JSON or YAML format.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span>
-  <span class="nt">Ec2Instance</span><span class="p">:</span>
-    <span class="nt">Type</span><span class="p">:</span> <span class="s">&#39;AWS::EC2::Instance&#39;</span>
-    <span class="nt">Properties</span><span class="p">:</span>
-      <span class="nt">SecurityGroups</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="kt">!Ref</span> <span class="l l-Scalar l-Scalar-Plain">InstanceSecurityGroup</span>
-      <span class="nt">KeyName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mykey</span>
-      <span class="nt">ImageId</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
-  <span class="nt">InstanceSecurityGroup</span><span class="p">:</span>
-    <span class="nt">Type</span><span class="p">:</span> <span class="s">&#39;AWS::EC2::SecurityGroup&#39;</span>
-    <span class="nt">Properties</span><span class="p">:</span>
-      <span class="nt">GroupDescription</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable SSH access via port 22</span>
-      <span class="nt">SecurityGroupIngress</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">IpProtocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
-          <span class="nt">FromPort</span><span class="p">:</span> <span class="s">&#39;22&#39;</span>
-          <span class="nt">ToPort</span><span class="p">:</span> <span class="s">&#39;22&#39;</span>
-          <span class="nt">CidrIp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span>
-</code></pre></div>
-<p>CloudFormation is similar to <a href="https://www.terraform.io">Terraform</a> with the difference that Terraform can be used to serve multiple cloud providers, not just AWS.</p>
+                <h1 id="x-ray">X-Ray</h1>
+<p>AWS X-Ray is used to help to monitor the performance &amp; latency of distributed applications like EC2, ECS, Lambda, and Elastic BeanStalk.</p>
+<p>There is a need to integrate the X-Ray SDK with your application and also install the X-Ray agent.</p>
                 
               
               
@@ -920,7 +901,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../interact-cloud9/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../monitor-health/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -929,19 +910,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Cloud9
+              Health
             </div>
           </div>
         </a>
       
       
-        <a href="../monitor-cloudwatch/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../security-iam/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              CloudWatch
+              IAM
             </div>
           </div>
           <div class="md-footer__button md-icon">
