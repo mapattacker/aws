@@ -536,6 +536,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-secrets/" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-detective/" class="md-nav__link">
+        Detect
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -991,6 +1015,37 @@
                 
                 <h1 id="s3">S3</h1>
 <p>AWS S3 stands for Simple Storage Service.</p>
+<p>There are various classes of S3, based on how frequently they are accessed.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3 Standard</td>
+<td>General purpose</td>
+</tr>
+<tr>
+<td>S3 Intelligent Tier</td>
+<td>Auto change of tier</td>
+</tr>
+<tr>
+<td>S3 Infrequent Access</td>
+<td>Access less frequent, but requires rapid access</td>
+</tr>
+<tr>
+<td>S3 Glacier</td>
+<td>Archival purpose</td>
+</tr>
+<tr>
+<td>S3 Deep Glacier</td>
+<td>Access only once or twice a year</td>
+</tr>
+</tbody>
+</table>
 <h2 id="sdk-helper-functions">SDK helper functions</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 
