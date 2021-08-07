@@ -22,30 +22,48 @@ theme:
 nav:
   - Home: index.md
   - Basics: 
-        Infrastructure: aws-infra.md
-        Models: models.md
-        Billing: billing.md
-  - Security:
-      IAM: iam.md
-      VPC: vpc.md
+      Infrastructure: aws-infra.md
+      Models: models.md
+      Billing: billing.md
   - Interact with AWS Services:
-      AWS CLI: cli.md
-      Boto3: boto3.md
-      Cloud9: cloud9.md
+      AWS CLI: interact-cli.md
+      Boto3: interact-boto3.md
+      Cloud9: interact-cloud9.md
+      CloudFormation: interact-cloudformation.md
+  - Management & Governance:
+      Systems Manager: manage-systems-manager.md
+      Config: manage-config.md
+      Health: manage-health.md
+  - Monitoring:
+      CloudWatch: monitor-cloudwatch.md
+      CloudTrail: monitor-cloudtrail.md
+      X-Ray: monitor-xray.md
+  - Security:
+      IAM: security-iam.md
+      Secrets: security-secrets.md
+      Detect: security-detective.md
+  - Networking:
+      VPC: networking-vpc.md
+      IP: networking-ip.md
   - Compute:
       Intro: compute-intro.md
       EC2: compute-ec2.md
       Lambda: compute-lambda.md
       Containers: compute-containers.md
+      Elastic Load Balancer: compute-elb.md
+      Auto Scaling: compute-auto-scaling.md
   - Storage:
       Intro: storage-intro.md
       S3: storage-s3.md
+      EBS: storage-ebs.md
+  - Database:
+      Intro: db-intro.md
+      RDS: db-rds.md
+      DynamoDB: db-dynamodb.md
   - APIs:
       API Gateway: api-gateway.md
   - Step Functions: step-functions.md
-  - Systems Manager: systems-manager.md
-  - Monitoring:
-      Cloudwatch: cloudwatch.md
+
 
 repo_name: mapattacker/aws
 repo_url: https://github.com/mapattacker/aws
