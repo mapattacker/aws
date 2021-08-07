@@ -2,6 +2,16 @@
 
 AWS S3 stands for Simple Storage Service.
 
+There are various classes of S3, based on how frequently they are accessed.
+
+| Class | Desc |
+|-|-|
+| S3 Standard | General purpose |
+| S3 Intelligent Tier | Auto change of tier |
+| S3 Infrequent Access | Access less frequent, but requires rapid access |
+| S3 Glacier | Archival purpose (mins/hours retriveal) |
+| S3 Deep Glacier | Access only once or twice a year (24h retrieval) |
+
 ## SDK helper functions
 
 ```python
