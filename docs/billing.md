@@ -39,7 +39,7 @@ The pricing calculator allows you to add AWS services and their configurations t
 
 ## AWS Cost Explorer
 
-Allows us to visualize usage patterns over time and to identify underlying cost drivers. We can also create a forecast by selecting a future time range for your report.
+Allows us to visualize **usage patterns** over time and to identify underlying cost drivers. We can also create a **forecast** by selecting a future time range for your report. There are also **Savings Plan recommendations** at the member (linked) account level in addition to the existing AWS organization-level recommendations 
 
  * which service used the most
  * which linked account used the most
