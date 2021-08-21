@@ -1,6 +1,6 @@
 # Config
 
-AWS Config helps to evaluate existing configurations of your resources against your desired configurations.
+AWS Config, detects configuration changes of your resources, and evaluate against your desired configurations.
 
 
 
