@@ -14,7 +14,7 @@
     
     
       
-        <title>Config - AWS Guide</title>
+        <title>Launch Flask in EC2 - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#config" class="md-skip">
+        <a href="#launch-flask-in-ec2" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Config
+              Launch Flask in EC2
             
           </span>
         </div>
@@ -374,14 +374,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Management & Governance
@@ -409,20 +407,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../manage-config/" class="md-nav__link">
         Config
       </a>
-      
     </li>
   
 
@@ -940,6 +929,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#launch-a-new-ec2-instance" class="md-nav__link">
+    Launch a new EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allocate-an-elastic-ip" class="md-nav__link">
+    Allocate an Elastic IP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-into-ec2" class="md-nav__link">
+    SSH into EC2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-launch-flask-app" class="md-nav__link">
+    Create &amp; Launch Flask app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-port-access-to-internet" class="md-nav__link">
+    Enable Port Access to Internet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close-ec2" class="md-nav__link">
+    Close EC2
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -950,21 +989,100 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/manage-config.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-ec2-public.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="config">Config</h1>
-<p>AWS Config, detects configuration changes of your resources, and evaluate against your desired configurations.</p>
+                <h1 id="launch-flask-in-ec2">Launch Flask in EC2</h1>
+<h2 id="launch-a-new-ec2-instance">Launch a new EC2 instance</h2>
+<p>First we go to the EC2 instance page in the console, and click Launch Instances.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/manage-config1.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public1.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
 
-<p>Some examples of configurations include:</p>
+<p>This will divert you to the steps to launch an instance, first by choosing an Amazon Machine Image (AMI). For me, I prefer Ubuntu, hence I seleted Ubuntu 18.04 image.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/manage-config2.png?raw=true" style="width:100%" />
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public2.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Then we can choose the instance type, where I choose t2.micro, which is eligible to free tier.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public3.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>There are other configurations we can specify, but if we choose to accept defaults, we can just choose Review and Launch.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public4.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>A popup will appear asking you to create or use a key-pair. This allows you to SSH into the instance later on. After you created it, you can download a <code>.pem</code> file to your local machine.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public5.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>After this, you will be led to the EC2 instance page, and you can see that the instance is being initalized.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public6.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="allocate-an-elastic-ip">Allocate an Elastic IP</h2>
+<p>Before we go further, we need to understand that the public IP address of the instance will change whenever you stop-start the instance. To fix an IP address, we need to assign an Elastic IP to it.</p>
+<p>First, we will need to create an Elastic IP. Go to Network &amp; Security &gt; Elastic IP. And click Allocate Elastic IP.</p>
+<p>After it is created, click Actions &gt; Associate Elastic IP &gt; choose the EC2 instance you setup. You may choose to name your Elastic IP so that it is easier to identify it with your EC2 instance or project.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public7.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Note that Elastic IPs are free ONLY if they are associated with an EC2 instance.</p>
+<h2 id="ssh-into-ec2">SSH into EC2</h2>
+<p>Before we can SSH into our newly created EC2 instance, we need to reduce the permissions of our pem file.</p>
+<div class="highlight"><pre><span></span><code>chmod <span class="m">600</span> testing.pem
+</code></pre></div>
+<p>Then we can SSH in using the following command. Note that the public-ip is now the elastic IP. As we are using ubuntu, the computer name will be as such.</p>
+<div class="highlight"><pre><span></span><code>ssh -i testing.pem ubuntu@&lt;public-ip&gt;
+</code></pre></div>
+<p>Once in the EC2 instance, you may want to update any security patches with the following.</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get update
+</code></pre></div>
+<h2 id="create-launch-flask-app">Create &amp; Launch Flask app</h2>
+<p>We first install pip3 and then flask.</p>
+<p>Then we can create an <code>app.py</code> script with the following contents, and then launch it with <code>python3 app.py</code>. The flask app now runs!</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;Web App with Python Flask!&#39;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="enable-port-access-to-internet">Enable Port Access to Internet</h2>
+<p>To enable internet access, we need to open the port <code>5000</code>. We only need to define inbound rules as security groups are stateful. Note that by default ports are <code>80 (HTTP)</code> and <code>443 (HTTPS)</code> though, but we do not need them for this use case.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public8.png?raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<p>Now we can test from our browser that we can view our flask app, using the address <code>http://&lt;public-ip&gt;:5000</code>.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public9.png?raw=true" style="width:50%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="close-ec2">Close EC2</h2>
+<p>To prevent incurring charges, let's close our instance.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public10.png?raw=true" style="width:100%" />
   <figcaption></figcaption>
 </figure>
                 
@@ -982,39 +1100,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../manage-systems-manager/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Systems Manager
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../manage-health/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Health
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

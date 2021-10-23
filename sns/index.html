@@ -14,7 +14,7 @@
     
     
       
-        <title>Config - AWS Guide</title>
+        <title>SNS - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#config" class="md-skip">
+        <a href="#sns" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Config
+              SNS
             
           </span>
         </div>
@@ -374,14 +374,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Management & Governance
@@ -409,20 +407,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../manage-config/" class="md-nav__link">
         Config
       </a>
-      
     </li>
   
 
@@ -940,6 +929,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sms" class="md-nav__link">
+    SMS
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -950,23 +954,26 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/manage-config.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/sns.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="config">Config</h1>
-<p>AWS Config, detects configuration changes of your resources, and evaluate against your desired configurations.</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/manage-config1.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
-</figure>
+                <h1 id="sns">SNS</h1>
+<h2 id="sms">SMS</h2>
+<p>We can send a text message (SMS) directly to a phone after we add and verify a phone number in AWS management console.</p>
+<p>We can then test it in aws cli.</p>
+<div class="highlight"><pre><span></span><code>aws sns publish --phone-number +651234567 --message <span class="s2">&quot;Hello world&quot;</span>
+</code></pre></div>
+<p>In boto3, this is simply:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 
-<p>Some examples of configurations include:</p>
-<figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/manage-config2.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
-</figure>
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s2">&quot;sns&quot;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span>
+    <span class="n">PhoneNumber</span><span class="o">=</span><span class="s2">&quot;+651234567&quot;</span><span class="p">,</span>
+    <span class="n">Message</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
                 
               
               
@@ -982,39 +989,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../manage-systems-manager/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Systems Manager
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../manage-health/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Health
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
