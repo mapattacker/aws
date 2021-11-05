@@ -48,6 +48,7 @@ nav:
   - Compute:
       Intro: compute-intro.md
       EC2: compute-ec2.md
+      EC2-deploy: compute-ec2-public.md
       Lambda: compute-lambda.md
       Containers: compute-containers.md
       Elastic Load Balancer: compute-elb.md
@@ -60,6 +61,8 @@ nav:
       Intro: db-intro.md
       RDS: db-rds.md
       DynamoDB: db-dynamodb.md
+  - Machine Learning:
+      Sagemaker Studio: ai-sagemaker-studio.md
   - APIs:
       API Gateway: api-gateway.md
   - Step Functions: step-functions.md
