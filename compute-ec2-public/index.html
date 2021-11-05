@@ -955,11 +955,53 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
       <label class="md-nav__link" for="__nav_11">
+        Machine Learning
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Machine Learning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-sagemaker-studio/" class="md-nav__link">
+        Sagemaker Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
         APIs
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="APIs" data-md-level="1">
-        <label class="md-nav__title" for="__nav_11">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           APIs
         </label>
@@ -1154,7 +1196,7 @@
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="enable-port-access-to-internet">Enable Port Access to Internet</h2>
-<p>To enable internet access, we need to open the port <code>5000</code>. We only need to define inbound rules as security groups are stateful. Note that by default ports are <code>80 (HTTP)</code> and <code>443 (HTTPS)</code> though, but we do not need them for this use case.</p>
+<p>To enable internet access, we need to open the port <code>5000</code>. We only need to define inbound rules as security groups are stateful. Note that the browser default ports are <code>80 (HTTP)</code> and <code>443 (HTTPS)</code> though, but we are not using them for this use case.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/ec2-public8.png?raw=true" style="width:100%" />
   <figcaption></figcaption>

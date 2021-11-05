@@ -14,7 +14,7 @@
     
     
       
-        <title>Auto Scaling - AWS Guide</title>
+        <title>Sagemaker Studio - AWS Guide</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ec2-auto-scaling" class="md-skip">
+        <a href="#sagemaker-studio" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Auto Scaling
+              Sagemaker Studio
             
           </span>
         </div>
@@ -626,14 +626,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       <label class="md-nav__link" for="__nav_8">
         Compute
@@ -721,63 +719,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Auto Scaling
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../compute-auto-scaling/" class="md-nav__link">
         Auto Scaling
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#launch-template" class="md-nav__link">
-    Launch Template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#auto-scaling-group" class="md-nav__link">
-    Auto Scaling Group
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scaling-policies" class="md-nav__link">
-    Scaling Policies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -926,12 +872,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
       
       <label class="md-nav__link" for="__nav_11">
         Machine Learning
@@ -947,11 +895,63 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ai-sagemaker-studio/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sagemaker Studio
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Sagemaker Studio
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-new-studio-user" class="md-nav__link">
+    Create New Studio User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-a-git-repository" class="md-nav__link">
+    Cloning a Git Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-various-servers" class="md-nav__link">
+    Understanding the Various Servers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1044,22 +1044,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#launch-template" class="md-nav__link">
-    Launch Template
+  <a href="#create-new-studio-user" class="md-nav__link">
+    Create New Studio User
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-scaling-group" class="md-nav__link">
-    Auto Scaling Group
+  <a href="#cloning-a-git-repository" class="md-nav__link">
+    Cloning a Git Repository
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scaling-policies" class="md-nav__link">
-    Scaling Policies
+  <a href="#understanding-the-various-servers" class="md-nav__link">
+    Understanding the Various Servers
   </a>
   
 </li>
@@ -1076,46 +1076,43 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mapattacker/aws/edit/master/docs/compute-auto-scaling.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mapattacker/aws/edit/master/docs/ai-sagemaker-studio.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="ec2-auto-scaling">EC2 Auto Scaling</h1>
-<p>There are three main components to EC2 Auto Scaling.</p>
-<ul>
-<li><strong>Launch template or configuration</strong>: What resource should be automatically scaled?</li>
-<li><strong>EC2 Auto Scaling Group</strong>: Where should the resources be deployed?</li>
-<li><strong>Scaling policies</strong>: When should the resources be added or removed?</li>
-</ul>
-<h2 id="launch-template">Launch Template</h2>
-<p>You can create a launch template one of three ways. </p>
-<ul>
-<li>The fastest way to create a template is to use an <strong>existing EC2 instance</strong>. All the settings are already defined.</li>
-<li>Another option is to <strong>create one from an already existing template or a previous version of a launch template</strong>.</li>
-<li>The last option is to <strong>create a template from scratch</strong>. The following options will need to be defined: AMI ID, instance type, key pair, security group, storage, and resource tags.</li>
-</ul>
-<p>The launch template has <strong>version control</strong>.</p>
-<h2 id="auto-scaling-group">Auto Scaling Group</h2>
-<p>To set the auto scaling group, we need to choose the </p>
-<ul>
-<li>launch template</li>
-<li>type of EC2 purchase, i.e. on Demand, Spot instances or a hybrid of the two.</li>
-<li>VPC and Subnets</li>
-<li>Elastic Load Balancer</li>
-</ul>
-<p>The next important task is to set the capacity.</p>
+                <h1 id="sagemaker-studio">Sagemaker Studio</h1>
+<p>Sagemaker Studio is a customized Jupyter Lab server, a full fledged python IDE with integrated AWS MLOps platform inside for training, experiments tracking, and deployment.</p>
+<h2 id="create-new-studio-user">Create New Studio User</h2>
+<p>At AWS Sagemaker
+ * Open Sagemaker Studio
+ * Add User
+ * Input user name with sagemaker execution role
+ * After user is created, click launch app &gt; Studio</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/auto-scaling.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-create.png?raw=true" style="width:100%" />
+  <figcaption>Created Users</figcaption>
 </figure>
 
-<h2 id="scaling-policies">Scaling Policies</h2>
-<p>We can add in CloudWatch an alarm state trigger to activate ACG to launch EC2 instances when a threshold is met.</p>
+<h2 id="cloning-a-git-repository">Cloning a Git Repository</h2>
+<p>To link to an external Git repository, we will need to create an SSH Key.</p>
+<p>Open a Terminal at File &gt; New &gt; Terminal &gt; <code>ssh-keygen</code>. Get the public key using <code>cat ~/.ssh/id_rsa.pub</code> and save it to your git user settings.</p>
+<p>You should be able to git clone and push to your repository now.</p>
+<h2 id="understanding-the-various-servers">Understanding the Various Servers</h2>
+<p>Studio is installed in an Amazon Linux 1 server, which uses <code>yum</code> as package manager. It appears to be a slim down linux, and there were some libraries which were unable to be installed there. When they upgrade it to Amazon Linux 2, it should be better I think.</p>
 <figure>
-  <img src="https://github.com/mapattacker/aws/blob/master/images/auto-scaling2.png?raw=true" style="width:100%" />
-  <figcaption></figcaption>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-server.jpg?raw=true" style="width:100%" />
+  <figcaption>Various server types in Studio</figcaption>
 </figure>
+
+<p>In Studio we can also create a jupyter notebook. This notebook is launched in an instance of its own (we can choose the type), and have additional costs. The server uses debian, with <code>apt</code> as the package manager. We have to remember to manually shutdown the server from the left panel.</p>
+<p>Both Studio and Notebook servers are attached to an EFS, and your data and scripts you see in the explorer panel are saved there.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-jupyter.png?raw=true" style="width:100%" />
+  <figcaption>Various server types in Studio</figcaption>
+</figure>
+
+<p>When we launch a training or deployment job, they are launched in a separate instance again, using the Ubuntu Server. For training, the servers will be shutdown when training ends, while you will need to delete the endpoint to shutdown that server.</p>
                 
               
               
@@ -1134,7 +1131,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../compute-elb/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../db-dynamodb/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1143,19 +1140,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Elastic Load Balancer
+              DynamoDB
             </div>
           </div>
         </a>
       
       
-        <a href="../storage-intro/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../api-gateway/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Intro
+              API Gateway
             </div>
           </div>
           <div class="md-footer__button md-icon">
