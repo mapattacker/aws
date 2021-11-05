@@ -1084,11 +1084,13 @@
                 <h1 id="sagemaker-studio">Sagemaker Studio</h1>
 <p>Sagemaker Studio is a customized Jupyter Lab server, a full fledged python IDE with integrated AWS MLOps platform inside for training, experiments tracking, and deployment.</p>
 <h2 id="create-new-studio-user">Create New Studio User</h2>
-<p>At AWS Sagemaker
- * Open Sagemaker Studio
- * Add User
- * Input user name with sagemaker execution role
- * After user is created, click launch app &gt; Studio</p>
+<p>At AWS Sagemaker</p>
+<ul>
+<li>Open Sagemaker Studio</li>
+<li>Add User</li>
+<li>Input user name with sagemaker execution role</li>
+<li>After user is created, click launch app &gt; Studio</li>
+</ul>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-create.png?raw=true" style="width:100%" />
   <figcaption>Created Users</figcaption>
@@ -1109,7 +1111,7 @@
 <p>Both Studio and Notebook servers are attached to an EFS, and your data and scripts you see in the explorer panel are saved there.</p>
 <figure>
   <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-jupyter.png?raw=true" style="width:100%" />
-  <figcaption>Various server types in Studio</figcaption>
+  <figcaption>Shutting down Jupyter Notebook server</figcaption>
 </figure>
 
 <p>When we launch a training or deployment job, they are launched in a separate instance again, using the Ubuntu Server. For training, the servers will be shutdown when training ends, while you will need to delete the endpoint to shutdown that server.</p>
