@@ -948,6 +948,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mlops" class="md-nav__link">
+    MLOps
+  </a>
+  
+    <nav class="md-nav" aria-label="MLOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experiments-its-components" class="md-nav__link">
+    Experiments &amp; its Components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    Training
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1064,6 +1091,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mlops" class="md-nav__link">
+    MLOps
+  </a>
+  
+    <nav class="md-nav" aria-label="MLOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experiments-its-components" class="md-nav__link">
+    Experiments &amp; its Components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    Training
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1115,6 +1169,64 @@
 </figure>
 
 <p>When we launch a training or deployment job, they are launched in a separate instance again, using the Ubuntu Server. For training, the servers will be shutdown when training ends, while you will need to delete the endpoint to shutdown that server.</p>
+<h2 id="mlops">MLOps</h2>
+<p>The following uses the example <a href="https://github.com/mapattacker/sagemaker-studio-example">repo</a> in github.</p>
+<h3 id="experiments-its-components">Experiments &amp; its Components</h3>
+<p>Sagemaker Studio allows us to view experiments, created via its python API, which can be installed via <code>pip install sagemaker-experiments</code>. Some utility scripts can be viewed <a href="https://github.com/mapattacker/sagemaker-studio-example/blob/master/project/sm_utils.py">here</a>.</p>
+<p>The hierarchy of Sagemaker experiments tracking include:</p>
+<table>
+<thead>
+<tr>
+<th>Noun</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiments</td>
+<td>An ML problem that we want to solve. Each experiment consists of a collection of trials</td>
+</tr>
+<tr>
+<td>Trial</td>
+<td>An iteration of a data science workflow related to an experiment. Each trial consists of several trial components</td>
+</tr>
+<tr>
+<td>Trial component</td>
+<td>A stage in a given trial. For instance, as we see in our example, we create one trial component for the data preprocessing stage and one trial component for model training. In a similar fashion, we can also add a trial component for any data postprocessing.</td>
+</tr>
+<tr>
+<td>Tracker</td>
+<td>A mechanism that records various metadata about a particular trial component, including any parameters, inputs, outputs, artifacts, and metrics. A tracker can be linked to a particular training component to assign the collected metadata to it.</td>
+</tr>
+</tbody>
+</table>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-experiments.jpg?raw=true" style="width:100%" />
+  <figcaption>Building blocks of experiments</figcaption>
+</figure>
+
+<p>We can nagivate to the experiments tab, right click and view the trial component lists for an overview.</p>
+<figure>
+  <img src="https://github.com/mapattacker/aws/blob/master/images/sm-studio-experiments-ui1raw=true" style="width:100%" />
+  <figcaption></figcaption>
+</figure>
+
+<h2 id="training">Training</h2>
+<div class="highlight"><pre><span></span><code>/opt/ml
+├── input
+│   ├── config
+│   │   ├── hyperparameters.json  &lt;--- From Estimator hyperparameter arg
+│   │   └── resourceConfig.json
+│   └── data
+│       └── &lt;channel_name&gt;        &lt;--- From Estimator fit method inputs arg
+│           └── &lt;input data&gt;
+├── code
+│   └── &lt;code files&gt;              &lt;--- From Estimator src_dir arg
+├── model
+│   └── &lt;model files&gt;             &lt;--- Location to save the trained model artifacts
+└── output
+    └── failure                   &lt;--- Training job failure logs
+</code></pre></div>
                 
               
               
